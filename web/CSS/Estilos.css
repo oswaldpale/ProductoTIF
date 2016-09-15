@@ -1,0 +1,81 @@
+/* 
+    Document   : Estilos
+    Created on : 8/05/2015, 09:26:42 PM
+    Author     : luis
+    Description:
+        Purpose of the stylesheet follows.
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#agrupar{
+	width: 960px;
+	margin: 15px auto;
+	
+       
+}
+
+#cabecera{
+       background-color: #003366;
+       border: 1px solid #999999;
+       padding: 20px;
+    
+}
+
+header figure img{
+    width : 214px; 
+    height : 124px;
+}
+
+section header{
+    margin: 50px auto;
+    padding: 20px;
+    border-style: solid;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+section{
+   padding: 20px;
+   border-style: solid;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;  
+  font-style: italic;
+  
+}
+
+section form input{
+     padding: 5px;
+}
+
+input:focus {
+  border: 2px solid #000;
+  background: #F3F3F3;
+}
+
+div{
+    margin: .4em 0;
+}
+
+div label {
+  width: 20%;
+   float: left;
+}
+
+.btn {
+  display: block;
+  margin: 15px;
+}
+
+section .btn {
+    display: block;
+    margin: 15px;
+}
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+/* Selector universal selecciona todos los elementos de la página*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/* Selector de tipo o etiqueta*/
+/*h1{
+	font: bold 30px verdana, sans-serif;
+}
+
+h2{
+	font: bold 14px verdana, sans-serif;
+}
+
+h3{
+	font: bold 14px verdana, sans-serif;
+        font-size: 16pt;
+}*/
+
+/*Declaramos los elementos estructurales de HTML como elementos block para lograr construir el modelo de caja
+  Los elementos afectados serán posicionadas uno sobre otro*/
+header, section, footer, aside, nav, article, figure, figcaption{
+    display: block;
+}
+Footer{
+    background-color: #003366;
+    color: #FFF;
+    padding: 50px;    
+}
+p{
+    text-align : justify;
+}
+
+#cabecera{
+       background-color: #003366;
+       padding: 20px;    
+}
+
+header figure img{
+    width : 214px; 
+    height : 124px;
+}
+
+ul.menu {
+  background: #F4F4F4;
+  border: 1px solid #7C7C7C;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul.menu li {
+  float: left;
+  width: 15%;
+}
+ul.menu li a {
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #7C7C7C;
+  color: #333;
+  display: block;
+  padding: .3em;
+  text-decoration: none;
+}
+
+ul li a:hover{
+    color:rosybrown;
+    font-size: 15px;
+}
+
+header h1{
+    text-align: center;
+}
+
+section figure img{    
+    width : 100%;
+    height : 350px;
+}
+#miSlide div div img{    
+    width : 100%;
+    height : 350px;
+}
+
+section{
+   font-size: 20px; 
+}
+
+section form input{
+     padding: 5px;
+}
+
+input:focus {
+  border: 2px solid #000;
+  background: #F3F3F3;
+}
+
+div{
+    margin: .4em 0;
+}
+
+div label {
+  width: 20%;
+   float: left;
+}
+
+.btn {
+  display: block;
+  margin: 15px;
+}
+.adaptar{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
