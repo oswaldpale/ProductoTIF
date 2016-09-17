@@ -25,7 +25,7 @@
        %>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-3">
                     <div class="well well-sm">
                         <form class="form-horizontal" method="post">
                             <fieldset>
@@ -53,7 +53,6 @@
                                 </div>
                                 <div class="form-group">
                                     <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                     <label for="inputName" class="control-label col-xs-3">Diagnostico:</label>
                                     <div class="col-md-8">
                                         <textarea class="form-control" id="diagnostico" name="diagnostico" placeholder="Fallos que presenta el dispositivo." rows="7"></textarea>
                                     </div>
@@ -61,7 +60,8 @@
 
                                 <div class="form-group">
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                         <i class="icon-bar"></i>
+                                        <button type="submit" class="btn btn-danger">Registrar</button>
                                     </div>
                                 </div>
                             </fieldset>

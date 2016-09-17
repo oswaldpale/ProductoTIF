@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author oswaldpale
  */
 public class ControllerTipoEquipo {
-     public TipoEquipoDao _tipoEquipo = new TipoEquipoDao();
+    public TipoEquipoDao _tipoEquipo = new TipoEquipoDao();
     public String consultarTipoEquipo() {
 
         ArrayList<TipoEquipo> dt = _tipoEquipo.ConsultarTipoEquipo();

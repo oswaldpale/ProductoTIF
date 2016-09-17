@@ -6,7 +6,7 @@
 package Entidades;
 
 import Conexion.ConexionMysql;
-import Modelo.TipoEquipo;
+import Modelo.SistemaOperativo;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -14,26 +14,25 @@ import java.util.HashMap;
  *
  * @author oswaldpale
  */
-public class TipoEquipoDao {
+public class SistemaOperativoDao {
     public ConexionMysql _conexion = new ConexionMysql();
-    
-    public ArrayList<TipoEquipo> ConsultarTipoEquipo(){
+     public ArrayList<SistemaOperativo> ConsultarSistemaOperativo(){
        
         String sql = "SELECT "
-                        + "    idtipoequipo, "
-                        + "    nombreEquipo "
+                        + "    idsistema, "
+                        + "    nombreSistema "
                         + "FROM "
-                        + "    tipoequipo";
+                        + "    tiposistemaoperativo";
        
-        ArrayList<TipoEquipo> SetServicio = new ArrayList<TipoEquipo>();
+        ArrayList<SistemaOperativo> SetServicio = new ArrayList<SistemaOperativo>();
         ArrayList dt = _conexion.GetData(sql);
         
         for (Object object : dt) {
             
-             TipoEquipo registro = new TipoEquipo();
+             SistemaOperativo registro = new SistemaOperativo();
              HashMap item =(HashMap) object;
-             registro.setIdtipoequipo(item.get("idtipoequipo").toString());
-             registro.setNombreTipo(item.get("nombreEquipo").toString());
+             registro.setIdsistema(item.get("idsistema").toString());
+             registro.setNombreSistema(item.get("nombreSistema").toString());
              SetServicio.add(registro);
         }
 
