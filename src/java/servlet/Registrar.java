@@ -5,7 +5,7 @@
 package servlet;
 
 import Conexion.SeguridadDao;
-import Entidades.RegistrarUsuario;
+import Entidades.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -118,30 +118,30 @@ public class Registrar extends HttpServlet {
                valorServicio != null && !valorServicio.equalsIgnoreCase(""))
             {
                  System.out.println("Datos completos");
-                 RegistrarUsuario reUsuario = new RegistrarUsuario();
+                 Usuario reUsuario = new Usuario();
                  reUsuario.setNombre(nombre);
-                 reUsuario.setApellidos(apellidos);
-                 reUsuario.setnIdent(numIdent);
-                 reUsuario.setOcupacion(ocupacion);
-                 reUsuario.setFijo(telFijo);
-                 reUsuario.setMovil(telMovil);
-                 reUsuario.setEmail(email);
-                 reUsuario.setNumeroServicio(numDeServicio);
-                 reUsuario.setFechaIngreso(fechaIngreso);
-                 reUsuario.setElemento(elemento);
-                 reUsuario.setTipoServicio(tipoDeServicio);
-                 reUsuario.setMarca(marca);
-                 reUsuario.setSistemaOperativo(sistemaOpe);
-                 reUsuario.setModelo(modeloEquipo);
-                 reUsuario.setNumeroSerie(numeroDeSerie);
-                 reUsuario.setDiagnosticoInicial(diagnosticoInicial);
-                 reUsuario.setTecnicoEncargado(tecnicoEncargado);
-                 reUsuario.setNumeroServicio2(numDeServicio2);
-                 reUsuario.setCambioParte(cambioParte);
-                 reUsuario.setPruebasRealizadas(pruebasRealizadas);
-                 reUsuario.setReporteFinal(reporteFinal);
-                 reUsuario.setRecomendaciones(recomendaciones);
-                 reUsuario.setValorServicio(valorServicio);
+//                 reUsuario.setApellidos(apellidos);
+//                 reUsuario.setnIdent(numIdent);
+//                 reUsuario.setOcupacion(ocupacion);
+//                 reUsuario.setFijo(telFijo);
+//                 reUsuario.setMovil(telMovil);
+//                 reUsuario.setEmail(email);
+//                 reUsuario.setNumeroServicio(numDeServicio);
+//                 reUsuario.setFechaIngreso(fechaIngreso);
+//                 reUsuario.setElemento(elemento);
+//                 reUsuario.setTipoServicio(tipoDeServicio);
+//                 reUsuario.setMarca(marca);
+//                 reUsuario.setSistemaOperativo(sistemaOpe);
+//                 reUsuario.setModelo(modeloEquipo);
+//                 reUsuario.setNumeroSerie(numeroDeSerie);
+//                 reUsuario.setDiagnosticoInicial(diagnosticoInicial);
+//                 reUsuario.setTecnicoEncargado(tecnicoEncargado);
+//                 reUsuario.setNumeroServicio2(numDeServicio2);
+//                 reUsuario.setCambioParte(cambioParte);
+//                 reUsuario.setPruebasRealizadas(pruebasRealizadas);
+//                 reUsuario.setReporteFinal(reporteFinal);
+//                 reUsuario.setRecomendaciones(recomendaciones);
+//                 reUsuario.setValorServicio(valorServicio);
                  
                  boolean registrado = SeguridadDao.registrar(reUsuario);
                   if (registrado) {

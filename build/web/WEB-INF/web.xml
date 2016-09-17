@@ -12,6 +12,10 @@
         <servlet-name>Consultar</servlet-name>
         <servlet-class>servlet.Consultar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletRegistrarClient</servlet-name>
+        <servlet-class>servlet.ServletRegistrarClient</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Validacion</servlet-name>
         <url-pattern>/Validacion</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Consultar</servlet-name>
         <url-pattern>/Consultar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRegistrarClient</servlet-name>
+        <url-pattern>/ServletRegistrarClient</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

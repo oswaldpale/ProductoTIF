@@ -1,5 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package servlet;
@@ -9,6 +10,7 @@ import Entidades.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -19,9 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author luis
+ * @author PcIsa
  */
-public class Consultar extends HttpServlet {
+public class ServletRegistrarClient extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -35,46 +37,37 @@ public class Consultar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-         RequestDispatcher dispacher;
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            RequestDispatcher dispacher;
         try {
-            String numeroCedula = request.getParameter("numeroCedula");
-            String numeroSerie = request.getParameter("numeroSerie");
-
-            System.out.println("numero de Cedula " + numeroCedula);
-            System.out.println("numero de Serie " + numeroSerie);
+            Usuario usu = new Usuario();
+            usu.setCedula(request.getParameter("cc_cliente"));
+            usu.setNombre(request.getParameter("nombre"));
+            usu.setApellido(request.getParameter("apellido"));
+            usu.setTelefono(request.getParameter("telefono"));
+            usu.setCelular(request.getParameter("celular"));
+            usu.setEmail(request.getParameter("email"));
+            usu.setOcupacion(request.getParameter("ocupacion"));
             
-            Usuario consulta = new Usuario();
             
-            if (numeroCedula != null && !numeroCedula.equalsIgnoreCase("")) {
-                System.out.println("Consultar por número de Cedula");
-//                consulta.setnIdent(numeroCedula);
-                
-                boolean reconsulta = SeguridadDao.consultar(consulta);
-                System.out.println("reconsulta" + reconsulta);
-                if(reconsulta){
-                    System.out.println("Se consulto exitosamente");
-                    request.getSession().setAttribute("DatosUsuarios", consulta);
-                  //  response.sendRedirect("/mostrarConsulta.jsp");
-                     dispacher = getServletContext().getRequestDispatcher("/mostrarConsulta.jsp"); 
-                     dispacher.forward(request, response);
-                     System.out.println("final");
-                }
-                
-                
-            } else {
-                if (numeroSerie != null && !numeroSerie.equalsIgnoreCase("")) {
-                    System.out.println("Consultar por numero de servicio");
-//                    consulta.setNumeroSerie(numeroSerie);
-                    
-                }
+            if(usu.getNombre() != null && !usu.getNombre().equalsIgnoreCase("") &&
+               usu.getApellido() != null && !usu.getApellido().equalsIgnoreCase("") &&
+               usu.getCedula() != null && !usu.getCedula().equalsIgnoreCase("") &&
+               usu.getOcupacion() != null && !usu.getOcupacion().equalsIgnoreCase("") && 
+               usu.getTelefono() != null && !usu.getTelefono().equalsIgnoreCase("") && 
+               usu.getCelular() != null && !usu.getCelular().equalsIgnoreCase("") && 
+               usu.getEmail() != null && !usu.getEmail().equalsIgnoreCase(""))
+            {
+                                  
+                 boolean registrado = SeguridadDao.registrar(usu);
+                  if (registrado) {
+                    dispacher = getServletContext().getRequestDispatcher("/Principal.jsp");  
+                    dispacher.forward(request, response);
+                    System.out.println("Registrado correctamente pagina principal");
+                  }
             }
-
-
-
-
-        } finally {
+        }finally{            
             out.close();
         }
     }
@@ -95,7 +88,7 @@ public class Consultar extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Consultar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -114,7 +107,7 @@ public class Consultar extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Consultar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Registrar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -128,3 +121,5 @@ public class Consultar extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 }
+
+
