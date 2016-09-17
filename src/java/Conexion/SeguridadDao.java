@@ -5,7 +5,7 @@
 package Conexion;
 
 import Entidades.RegistrarUsuario;
-import Entidades.Usuario;
+import Modelo.Usuario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

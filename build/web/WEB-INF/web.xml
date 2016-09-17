@@ -29,4 +29,8 @@
             30
         </session-timeout>
     </session-config>
+    <context-param>
+        <param-name>p-name</param-name>
+        <param-value>-value</param-value>
+    </context-param>
 </web-app>

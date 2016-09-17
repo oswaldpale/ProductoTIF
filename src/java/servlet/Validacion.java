@@ -5,7 +5,7 @@
 package servlet;
 
 import Conexion.SeguridadDao;
-import Entidades.Usuario;
+import Modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
