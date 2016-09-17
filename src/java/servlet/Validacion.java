@@ -51,20 +51,20 @@ public class Validacion extends HttpServlet {
                 usuario.setUsername(userName);
                 usuario.setPassword(userPass);
 
-                boolean esValido = SeguridadDao.esUsuarioValido(usuario);
+//                boolean esValido = SeguridadDao.esUsuarioValido(usuario);
 
-                if (esValido) {
-                    dispacher = getServletContext().getRequestDispatcher("/Principal.jsp");
-                    HttpSession sesion = request.getSession(true);
-                    sesion.setAttribute("autUsuario", usuario);
-                    dispacher.forward(request, response);
-                } else {
-                    strError = "Usuario y Password Incorrectos";
-                    dispacher = getServletContext().getRequestDispatcher("/index.jsp");
-                    HttpSession sesion = request.getSession(true);
-                    sesion.setAttribute("auterror", strError);
-                    dispacher.forward(request, response);
-                }
+//                if (esValido) {
+//                    dispacher = getServletContext().getRequestDispatcher("/Principal.jsp");
+//                    HttpSession sesion = request.getSession(true);
+//                    sesion.setAttribute("autUsuario", usuario);
+//                    dispacher.forward(request, response);
+//                } else {
+//                    strError = "Usuario y Password Incorrectos";
+//                    dispacher = getServletContext().getRequestDispatcher("/index.jsp");
+//                    HttpSession sesion = request.getSession(true);
+//                    sesion.setAttribute("auterror", strError);
+//                    dispacher.forward(request, response);
+//                }
 
             } else {
                 strError = "Datos no validos";
