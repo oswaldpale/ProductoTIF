@@ -81,7 +81,7 @@ public class ConexionMysql {
             }
            
         } catch (Exception e) {
-            e.printStackTrace();           
+            return false;          
         }
         return false;
     }

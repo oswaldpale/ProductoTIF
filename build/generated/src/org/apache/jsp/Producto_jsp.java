@@ -4,9 +4,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import Controlador.ControllerTipoEquipo;
-import Controlador.ControllerTipoServicio;
+import Controlador.ControllerMarca;
 
-public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Producto_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,12 +48,11 @@ public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>SOLICITUD PRODUCTO</title>\n");
+      out.write("        <title>REGISTRAR PRODUCTO</title>\n");
       out.write("        <link rel=\"stylesheet\"  type=\"text/css\" href=\"CSS/normalize.css\" />    \n");
       out.write("        <link rel=\"stylesheet\"  type=\"text/css\" href=\"CSS/style.css\" /> \n");
       out.write("        <link rel=\"stylesheet\" href=\"CSS/bootstrap.min.css\">\n");
@@ -61,16 +60,18 @@ public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <script type=\"text/javascript\" src=\"JS/jquery-1.10.2.min.js\"></script>\n");
       out.write("        <script type=\"text/javascript\" src=\"JS/bootstrap.min.js\"></script>\n");
       out.write("    </head>\n");
-      out.write("       ");
- ControllerTipoServicio servicio = new ControllerTipoServicio();
-          ControllerTipoEquipo tipoEquipo = new ControllerTipoEquipo();
-       
+      out.write("    <body>\n");
+      out.write("        ");
+ ControllerTipoEquipo tipoEquipo = new ControllerTipoEquipo(); 
       out.write("\n");
-      out.write("        <div class=\"container\">\n");
+      out.write("        ");
+ ControllerMarca marca = new ControllerMarca();
+      out.write("\n");
+      out.write("         <div class=\"container\">\n");
       out.write("            <div class=\"row\">\n");
-      out.write("                <div class=\"col-md-10\">\n");
+      out.write("                <div class=\"col-md-8 col-md-offset-3\">\n");
       out.write("                    <div class=\"well well-sm\">\n");
-      out.write("                        <form class=\"form-horizontal\" method=\"post\">\n");
+      out.write("                        <form class=\"form-horizontal\" method=\"post\" action=\"ServletProducto\">\n");
       out.write("                            <fieldset>\n");
       out.write("                                <legend class=\"text-center header\">Información del Equipo</legend>\n");
       out.write("                                <div class=\"form-group\">\n");
@@ -79,36 +80,29 @@ public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.print( tipoEquipo.consultarTipoEquipo());
       out.write("\n");
       out.write("                                </div>\n");
+      out.write("                               \n");
       out.write("                                <div class=\"form-group\">\n");
-      out.write("                                    <label for=\"inputName\" class=\"control-label col-xs-3\">Tipo Servicio:</label>\n");
-      out.write("                                    ");
-      out.print( servicio.consultarTipoServicio());
+      out.write("                                    <label for=\"inputName\" class=\"control-label col-xs-3\">Marca:</label>\n");
+      out.write("                                      ");
+      out.print(marca.consultarMarca());
       out.write("\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"form-group\">\n");
-      out.write("                                    <span class=\"col-md-1 col-md-offset-2 text-center\"><i class=\"fa fa-user bigicon\"></i></span>\n");
-      out.write("                                    <div class=\"col-md-8\">\n");
-      out.write("                                        <input id=\"lname\" name=\"name\" type=\"text\" placeholder=\"Last Name\" class=\"form-control\">\n");
-      out.write("                                    </div>\n");
-      out.write("                                </div>\n");
-      out.write("\n");
-      out.write("                                <div class=\"form-group\">\n");
-      out.write("                                    <span class=\"col-md-1 col-md-offset-2 text-center\"><i class=\"fa fa-envelope-o bigicon\"></i></span>\n");
-      out.write("                                    <div class=\"col-md-8\">\n");
-      out.write("                                        <input id=\"email\" name=\"email\" type=\"text\" placeholder=\"Email Address\" class=\"form-control\">\n");
+      out.write("                                    <label for=\"inputName\" class=\"control-label col-xs-3\">Serial:</label>\n");
+      out.write("                                    <div class=\"col-xs-8\">\n");
+      out.write("                                        <input name=\"nserial\" type=\"text\" class=\"form-control\">\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"form-group\">\n");
-      out.write("                                    <span class=\"col-md-1 col-md-offset-2 text-center\"><i class=\"fa fa-pencil-square-o bigicon\"></i></span>\n");
-      out.write("                                     <label for=\"inputName\" class=\"control-label col-xs-3\">Diagnostico:</label>\n");
-      out.write("                                    <div class=\"col-md-8\">\n");
-      out.write("                                        <textarea class=\"form-control\" id=\"diagnostico\" name=\"diagnostico\" placeholder=\"Fallos que presenta el dispositivo.\" rows=\"7\"></textarea>\n");
+      out.write("                                    <label for=\"inputName\" class=\"control-label col-xs-3\">Modelo:</label>\n");
+      out.write("                                    <div class=\"col-xs-8\">\n");
+      out.write("                                        <input id=\"lmodelo\" name=\"nmodelo\" type=\"text\" class=\"form-control\">\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");
-      out.write("\n");
       out.write("                                <div class=\"form-group\">\n");
       out.write("                                    <div class=\"col-md-12 text-center\">\n");
-      out.write("                                        <button type=\"submit\" class=\"btn btn-primary btn-lg\">Submit</button>\n");
+      out.write("                                         <i class=\"icon-bar\"></i>\n");
+      out.write("                                        <button type=\"submit\" class=\"btn btn-danger\"  >Registrar</button>\n");
       out.write("                                    </div>\n");
       out.write("                                </div>\n");
       out.write("                            </fieldset>\n");
@@ -117,7 +111,7 @@ public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("    \n");
+      out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

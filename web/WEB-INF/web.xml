@@ -12,6 +12,10 @@
         <servlet-name>Consultar</servlet-name>
         <servlet-class>servlet.Consultar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletProducto</servlet-name>
+        <servlet-class>servlet.ServletProducto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Validacion</servlet-name>
         <url-pattern>/Validacion</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Consultar</servlet-name>
         <url-pattern>/Consultar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletProducto</servlet-name>
+        <url-pattern>/ServletProducto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

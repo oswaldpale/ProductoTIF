@@ -5,14 +5,37 @@
  */
 package Entidades;
 
+import Conexion.ConexionMysql;
+import Modelo.Producto;
+
+
 /**
  *
  * @author oswaldpale
  */
 public class ProductoDao {
-   public boolean insertarProducto(String producto){
-      
-       return true;
+    public ConexionMysql _conexion = new ConexionMysql();
+   public boolean insertarProducto(Producto p){
+       String sql = "INSERT "
+                        + "INTO "
+                        + "    producto "
+                        + "    ( "
+                        + "        id_tipo_equipo, "
+                        + "        idmarca, "
+                        + "        modelo, "
+                        + "        n_serie "
+                        + "    ) "
+                        + "    VALUES "
+                        + "    ( "
+                        + "        " + p.getIdtipoequipo() +", "
+                        + "        " + p.getIdmarca() + ", "
+                        + "       '" + p.getModelo()  + "', "
+                        + "       '" + p.getSerial() + "'"
+                        + "    )";
+       return _conexion.SetData(sql);
    }
+   
+  
+   
    
 }

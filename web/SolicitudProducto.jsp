@@ -4,7 +4,7 @@
     Author     : oswaldpale
 --%>
 
-<%@page import="Controlador.ControllerTipoEquipo"%>
+
 <%@page import="Controlador.ControllerTipoServicio"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,8 +20,8 @@
         <script type="text/javascript" src="JS/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     </head>
+    <body>
        <% ControllerTipoServicio servicio = new ControllerTipoServicio();
-          ControllerTipoEquipo tipoEquipo = new ControllerTipoEquipo();
        %>
         <div class="container">
             <div class="row">
@@ -30,10 +30,6 @@
                         <form class="form-horizontal" method="post">
                             <fieldset>
                                 <legend class="text-center header">Información del Equipo</legend>
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label col-xs-3">Tipo De Equipo:</label>
-                                    <%= tipoEquipo.consultarTipoEquipo()%>
-                                </div>
                                 <div class="form-group">
                                     <label for="inputName" class="control-label col-xs-3">Tipo Servicio:</label>
                                     <%= servicio.consultarTipoServicio()%>
@@ -44,7 +40,6 @@
                                         <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                                     <div class="col-md-8">
@@ -70,5 +65,5 @@
                 </div>
             </div>
         </div>
-    
+    </body>
 </html>

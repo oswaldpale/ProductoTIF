@@ -9,6 +9,7 @@ import Entidades.RegistrarUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -38,6 +39,7 @@ public class Consultar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
          RequestDispatcher dispacher;
+        
         try {
             String numeroCedula = request.getParameter("numeroCedula");
             String numeroSerie = request.getParameter("numeroSerie");

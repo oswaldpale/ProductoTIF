@@ -21,7 +21,7 @@ public class ControllerTipoEquipo {
         ArrayList<TipoEquipo> dt = _tipoEquipo.ConsultarTipoEquipo();
 
         String html = "  <div class=\"col-xs-8\">\n"
-                      + "  <select class=\"form-control\" id=\"tipoesquipo_id\">";
+                      + "  <select class=\"form-control\" id=\"tipoesquipo_id\" name =\"ntipoequipo\">";
         
         for (TipoEquipo equipo : dt) {
             
@@ -32,4 +32,11 @@ public class ControllerTipoEquipo {
                 + "                    </div> ";
         return html;
     }
+    
+    public String EnviarDatos(String valor){
+        String valor1  = valor;
+        return valor1;
+    }
+    
+    
 }
