@@ -13,18 +13,13 @@
         <servlet-class>servlet.Consultar</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <servlet-name>ServletProducto</servlet-name>
         <servlet-class>servlet.ServletProducto</servlet-class>
-=======
+
         <servlet-name>ServletRegistrarClient</servlet-name>
         <servlet-class>servlet.ServletRegistrarClient</servlet-class>
->>>>>>> db41005308e5552eaf5104edb2ac562cae23a05f
-=======
-        <servlet-name>ServletRegistrarClient</servlet-name>
-        <servlet-class>servlet.ServletRegistrarClient</servlet-class>
->>>>>>> db41005308e5552eaf5104edb2ac562cae23a05f
+
     </servlet>
     <servlet-mapping>
         <servlet-name>Validacion</servlet-name>
@@ -39,18 +34,13 @@
         <url-pattern>/Consultar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <servlet-name>ServletProducto</servlet-name>
         <url-pattern>/ServletProducto</url-pattern>
-=======
+
         <servlet-name>ServletRegistrarClient</servlet-name>
         <url-pattern>/ServletRegistrarClient</url-pattern>
->>>>>>> db41005308e5552eaf5104edb2ac562cae23a05f
-=======
-        <servlet-name>ServletRegistrarClient</servlet-name>
-        <url-pattern>/ServletRegistrarClient</url-pattern>
->>>>>>> db41005308e5552eaf5104edb2ac562cae23a05f
+
     </servlet-mapping>
     <session-config>
         <session-timeout>

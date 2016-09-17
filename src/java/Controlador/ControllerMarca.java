@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import Entidades.MarcaDao;
+import Modelo.MarcaDao;
 import Modelo.Marca;
 import java.util.ArrayList;
 
