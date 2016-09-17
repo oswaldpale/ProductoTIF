@@ -5,9 +5,9 @@
  */
 package Controlador;
 
-import Entidades.TipoEquipoDao;
-import Modelo.TipoEquipo;
-import Modelo.TipoServicio;
+import Modelo.TipoEquipoDao;
+import Entidades.TipoEquipo;
+import Entidades.TipoServicio;
 import java.util.ArrayList;
 
 /**

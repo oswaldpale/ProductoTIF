@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Entidades.TipoServicioDao;
-import Modelo.TipoServicio;
+import Modelo.TipoServicioDao;
+import Entidades.TipoServicio;
 import java.util.ArrayList;
 import java.util.Iterator;
 

@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Entidades.ProductoDao;
-import Modelo.Producto;
+import Modelo.ProductoDao;
+import Entidades.Producto;
 
 /**
  *

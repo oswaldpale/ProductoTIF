@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Entidades.SistemaOperativoDao;
-import Modelo.SistemaOperativo;
+import Modelo.SistemaOperativoDao;
+import Entidades.SistemaOperativo;
 import java.util.ArrayList;
 
 /**

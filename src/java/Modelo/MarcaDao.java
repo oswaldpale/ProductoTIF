@@ -6,7 +6,7 @@
 package Modelo;
 
 import Conexion.ConexionMysql;
-import Modelo.Marca;
+import Entidades.Marca;
 import java.util.ArrayList;
 import java.util.HashMap;
 
