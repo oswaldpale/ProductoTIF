@@ -4,14 +4,10 @@
     
 --%>
 
-<%@page import="Modelo.Usuario"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-    HttpSession sesion = request.getSession();
-    Usuario usuario = (Usuario) sesion.getAttribute("autUsuario");
 
-%>
 
 
 <html>
@@ -252,7 +248,7 @@
             <div class="container">
             <section>
                 <header>
-                    <h1>Bienvenido <%=usuario.getNombre()%></h1>
+                
                     <h2>Datos De Cliente</h2>
                 </header>
                 <!-- Formulario para registrar Usuarios -->

@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import Controlador.ControllerRegistrarCliente;
 import Modelo.UsuarioDao;
 import Entidades.Usuario;
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class ServletRegistrarClient extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    UsuarioDao usuDao = new UsuarioDao();
+    ControllerRegistrarCliente _controlUsuario = new ControllerRegistrarCliente();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -47,8 +48,10 @@ public class ServletRegistrarClient extends HttpServlet {
             usu.setCelular(request.getParameter("celular"));
             usu.setEmail(request.getParameter("email"));
             usu.setOcupacion(request.getParameter("ocupacion"));
+            
+            
 
-            if(usuDao.insertarCliente(usu)){
+            if(_controlUsuario.insertarCliente(usu)){
                   dispacher = getServletContext().getRequestDispatcher("/Principal.jsp");
                   dispacher.forward(request, response);
              }else{

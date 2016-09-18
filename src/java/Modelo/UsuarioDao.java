@@ -6,15 +6,16 @@
 package Modelo;
 
 import Conexion.ConexionMysql;
+import Entidades.Usuario;
 
 /**
  *
  * @author oswaldpale
  */
 public class UsuarioDao {
-    private  ConexionMysql _connection = new ConexionMysql();
+    ConexionMysql _connection = new ConexionMysql();
     
-    public boolean insertarCliente(Entidades.Usuario usu){
+    public boolean insertarCliente(Usuario usu){
             String sql = "INSERT "
                              + "INTO "
                              + "    cliente "
