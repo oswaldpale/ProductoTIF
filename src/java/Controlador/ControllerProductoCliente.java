@@ -6,6 +6,7 @@
 package Controlador;
 
 import Entidades.Cliente_producto_Valoracion;
+import Entidades.DetalleServicio;
 import Entidades.Producto;
 import Entidades.Usuario;
 import Modelo.ClienteproductoDAO;
@@ -26,6 +27,25 @@ public class ControllerProductoCliente {
     }
     public Cliente_producto_Valoracion Consulta_Cliente_producto_valoracion(Producto p){
         return cpdDao.Consulta_Cliente_producto_valoracion(p);
+    }
+    
+    public String ConsultarDetalleServicio(Producto p){
+        
+        ArrayList<DetalleServicio> det =  cpdDao.consultarDetalleServicio(p);
+        String htmlcode="";
+        int contador =0;
+        for (DetalleServicio ds : det) {
+            contador=contador + 1;
+            htmlcode = htmlcode +  " <tr>\n" +
+                                   "     <td>" + contador + " </td>\n" +
+                                   "     <td>" + ds.getPruebaRealizada() + "</td>\n" +
+                                   "     <td>" + ds.getCambioparte() + "</td>\n" +
+                                   "     <td>" + ds.getValorservicio()+ "</td>\n" +
+                                   " </tr>\n";
+        }
+        
+      
+        return htmlcode;
     }
     
     

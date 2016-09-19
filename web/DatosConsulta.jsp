@@ -30,12 +30,12 @@
             Usuario _infCliente = new Usuario();
             _usuario.setCedula(request.getParameter("cc_cliente"));
             _producto.setSerial(request.getParameter("n_serial"));
-            _infCliente =(Usuario) pc.Consulta_Usuario(_usuario);
+            _infCliente = (Usuario) pc.Consulta_Usuario(_usuario);
             infProducto = (Cliente_producto_Valoracion) pc.Consulta_Cliente_producto_valoracion(_producto);
 
         %>
         <!-- Start Formoid form-->
-      <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-7 col-md-offset-3">
                     <div class="well well-sm">
@@ -47,7 +47,7 @@
                                     <div class="form-group">
                                         <label for="inputName" class="control-label col-xs-2">Nombre</label>
                                         <div class="col-xs-10">
-                                            <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getNombre() %>">
+                                            <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getNombre()%>">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -60,52 +60,58 @@
                                             <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getCelular()%>">
                                         </div>
                                     </div>
-                                     <div class="form-group">
+                                    <div class="form-group">
                                         <label for="inputName" class="control-label col-xs-2">Ocupación</label>
                                         <div class="col-xs-10">
-                                            <input name="nocupacion" type="text" class="form-control" readonly="true" value="<%=_infCliente.getOcupacion() %>">
+                                            <input name="nocupacion" type="text" class="form-control" readonly="true" value="<%=_infCliente.getOcupacion()%>">
                                         </div>
                                     </div>
                                 </fieldset>
                                 <fieldset>
                                     <legend class="text-left bg-primary">Información del Mantenimiento</legend>
                                 </fieldset>
-                                      <div class="form-group">
-                                        <label for="inputName" class="control-label col-xs-2">Equipo</label>
-                                        <div class="col-xs-10">
-                                            <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=infProducto.getNombreEquipo() %>">
-                                        </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="control-label col-xs-2">No Servicio</label>
+                                    <div class="col-xs-4">
+                                        <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getTelefono()%>">
                                     </div>
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label col-xs-3">Marca:</label>
-                                    
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName" class="control-label col-xs-3">Serial:</label>
-                                    <div class="col-xs-8">
-                                        <input name="nserial" type="text" class="form-control" readonly="true">
+                                    <label for="inputName" class="control-label col-xs-2">Precio del Servicio</label>
+                                    <div class="col-xs-4">
+                                        <input name="ncliente" type="text" class="form-control" readonly="true" value="<%= "$" + infProducto.getPrecioMantenimiento()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-10 text-center">
-                                      
-                                    <div class="col-md-5">
-                                        <label for="inputName" class="control-label col-xs-2">Modelo:</label>
-                                        <input id="lmodelo" name="nmodelo" type="text" class="form-control" readonly>
+                                    <label for="inputName" class="control-label col-xs-2">Equipo</label>
+                                    <div class="col-xs-10">
+                                        <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=infProducto.getNombreEquipo()%>">
                                     </div>
-                                    <div class=" col-md-5">
-                                        <label for="inputName" class="control-label col-xs-2">Modelo:</label>
-                                        <input id="lmodelo" name="nmodelo" type="text" class="form-control" readonly/>
-                                    </div>
-                                  </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-12 text-center">
-                                         <i class="icon-bar"></i>
-                                        <button type="submit" class="btn btn-success"  >Solicitar Confirmación del Arreglo</button>
+                                    <label for="inputName" class="control-label col-xs-2">Servicio Prestado</label>
+                                    <div class="col-xs-10">
+                                        <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=infProducto.getTipoServicio()%>">
                                     </div>
                                 </div>
-                            </fieldset>
+
+                                <fieldset>
+                                    <legend class="text-success left bg-success">Detalle Servicio Prestado</legend>
+                                    <fieldset title="Detalle Servicio">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Prueba Realizada</th>
+                                                    <th>Cambio de Partes</th>
+                                                    <th>Precio</th>
+                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <%= pc.ConsultarDetalleServicio(_producto) %>
+                                            </tbody>
+                                        </table
+                                    </fieldset>
+                                </fieldset>
                         </form>
                     </div>
                 </div>

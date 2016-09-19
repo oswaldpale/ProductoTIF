@@ -7,6 +7,7 @@ package Modelo;
 
 import Conexion.ConexionMysql;
 import Entidades.Cliente_producto_Valoracion;
+import Entidades.DetalleServicio;
 import Entidades.Producto;
 import Entidades.Usuario;
 import java.util.ArrayList;
@@ -25,7 +26,8 @@ public class ClienteproductoDAO {
         String sql = ""
                     + "select vp.id_cliente_tecnico as numServicio,ts.NombreServicio as TipoServicio, "
                     + " vp.fecha_ingreso as fechaIngreso, m.nombremarca as marca, vp.estado as estado, "
-                    + "p.modelo as modelo, vp.estado_producto, te.nombreEquipo as nombreEquipo, "
+                    + "p.modelo as modelo, vp.estado_producto,"
+                    + "UPPER(CONCAT(te.nombreEquipo,' ',m.nombremarca,' Modelo: ',p.modelo,' ','serial: ', p.n_serie)) as nombreEquipo, "
                     + "vp.valor_total as precioMantenimiento from marca m "
                     + "inner join producto p "
                     + "on p.idmarca = m.idmarca "
@@ -54,7 +56,7 @@ public class ClienteproductoDAO {
             pa.setModelo(item.get("modelo").toString());
             pa.setEstado_producto(item.get("estado_producto").toString());
             pa.setNombreEquipo(item.get("nombreEquipo").toString());
-            pa.setNombreEquipo(item.get("valor_total").toString());
+            pa.setPrecioMantenimiento(item.get("valor_total").toString());
         }
         return pa;
 
@@ -79,6 +81,43 @@ public class ClienteproductoDAO {
 
         return u;
 
+    }
+    
+    public ArrayList<DetalleServicio> consultarDetalleServicio(Producto p){
+        String sql ="SELECT "
+                    + "    mp.id_reporte_mantenimiento, "
+                    + "    mp.pruebas_realizadas, "
+                    + "    mp.cambio_de_parte, "
+                    + "    mp.reporte_final, "
+                    + "    mp.recomendaciones, "
+                    + "    mp.estado, "
+                    + "    mp.valor_servicio, "
+                    + "    mp.fecha_revision "
+                    + "FROM "
+                    + "    mantenimiento_piezas mp "
+                    + "INNER JOIN valoracion_producto vp "
+                    + "ON "
+                    + "    mp.valoracion_producto_id_cliente_tecnico = vp.id_cliente_tecnico "
+                    + "INNER JOIN producto p "
+                    + "ON "
+                    + "    vp.productoid = p.idproducto "
+                    + "WHERE "
+                    + "    p.n_serie = "+p.getSerial() + "";
+       
+        ArrayList dt = _conexion.GetData(sql);
+        
+        ArrayList<DetalleServicio> Servicio = new ArrayList<DetalleServicio>();
+        for (Object object : dt) {
+            
+            DetalleServicio pa = new DetalleServicio();
+            
+            HashMap item = (HashMap) object;
+            pa.setPruebaRealizada(item.get("pruebas_realizadas").toString());
+            pa.setCambioparte(item.get("cambio_de_parte").toString());
+            pa.setValorservicio(item.get("valor_servicio").toString());
+           Servicio.add(pa);
+        }
+        return Servicio;
     }
 
     public boolean Cliente_Producto_Login(Usuario u, Producto p) {
