@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-   
     <servlet>
         <servlet-name>ServletProducto</servlet-name>
         <servlet-class>servlet.ServletProducto</servlet-class>
@@ -9,12 +8,22 @@
         <servlet-name>ServletRegistrarClient</servlet-name>
         <servlet-class>servlet.ServletRegistrarClient</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>ServletConsultarProducto</servlet-name>
+        <servlet-class>servlet.ServletConsultarProducto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletProducto</servlet-name>
         <url-pattern>/ServletProducto</url-pattern>
     </servlet-mapping>
-   
+    <servlet-mapping>
+        <servlet-name>ServletRegistrarClient</servlet-name>
+        <url-pattern>/ServletRegistrarClient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletConsultarProducto</servlet-name>
+        <url-pattern>/ServletConsultarProducto</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

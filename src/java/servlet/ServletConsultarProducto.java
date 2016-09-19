@@ -5,11 +5,12 @@
  */
 package servlet;
 
-import Controlador.ControllerRegistrarCliente;
+import Controlador.ControllerProducto;
+import Controlador.Controller_Producto_Cliente;
+import Entidades.Producto;
 import Entidades.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,9 +21,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author PcIsa
  */
-public class ServletRegistrarClient extends HttpServlet {
-
+public class ServletConsultarProducto extends HttpServlet {
+    Controller_Producto_Cliente _pc = new Controller_Producto_Cliente();
+    
     /**
+     * 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -31,27 +34,21 @@ public class ServletRegistrarClient extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    ControllerRegistrarCliente _controlUsuario = new ControllerRegistrarCliente();
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         RequestDispatcher dispacher;
         try {
-            Usuario usu = new Usuario();
-            usu.setCedula(request.getParameter("cedula"));
-            usu.setNombre(request.getParameter("nombre"));
-            usu.setApellido(request.getParameter("apellido"));
-            usu.setTelefono(request.getParameter("telefono"));
-            usu.setCelular(request.getParameter("celular"));
-            usu.setEmail(request.getParameter("email"));
-            usu.setOcupacion(request.getParameter("ocupacion"));
+            /* TODO output your page here. You may use following sample code. */
+            Producto p = new Producto();
+            p.setSerial(request.getParameter("n_serie"));
+            Usuario u = new Usuario();
+            u.setCedula(request.getParameter("cc_cliente"));
             
-            
-
-            if(_controlUsuario.insertarCliente(usu)){
-                  response.sendRedirect("/ProductoTIF/DatosConsulta.jsp");
+             if(_pc.Cliente_Producto_Login(u, p)){
+                  response.sendRedirect("/ProductoTIF/DatosConsulta.jsp?cc_cliente="+u.getCedula()
+                  +"&n_serial="+p.getSerial());
              }else{
                   response.sendRedirect("/ProductoTIF/index.jsp");
              }
@@ -72,10 +69,7 @@ public class ServletRegistrarClient extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -89,11 +83,7 @@ public class ServletRegistrarClient extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-           
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -105,4 +95,5 @@ public class ServletRegistrarClient extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }

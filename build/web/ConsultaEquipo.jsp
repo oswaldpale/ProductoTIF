@@ -19,13 +19,11 @@
 <!-- Start Formoid form-->
 <link rel="stylesheet" href="CSS/ConsultaEquipo/formoid-biz-green.css" type="text/css" />
 <script type="text/javascript" src="JS/ConsultaEquipo/jquery.min.js"></script>
-<form class="formoid-biz-green" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post" action=""><div class="title"><h2>Consulta Equipo</h2></div>
-	<div class="element-number"><label class="title"><span class="required">*</span></label><input class="large" type="text" min="0" max="999999999" name="cedula" required="required" placeholder="Cedula" value=""/></div>
+<form class="formoid-biz-green" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post" action="ServletConsultarProducto"><div class="title"><h2>Consulta Equipo</h2></div>
+	<div class="element-number"><label class="title"><span class="required">*</span></label><input class="large" type="text" min="0" max="999999999" name="cc_cliente" required="required" placeholder="Cedula" value=""/></div>
 	<div class="element-number"><label class="title"><span class="required">*</span></label><input class="large" type="text" min="0" max="999999999" name="n_serie" required="required" placeholder="N° Serie" value=""/></div>
 <div class="submit"><input type="submit" value="Buscar"/></div></form><p class="frmd"></p><script type="text/javascript" src="JS/ConsultaEquipo/formoid-biz-green.js"></script>
 <!-- Stop Formoid form-->
-
-
 
 </body>
 </html>

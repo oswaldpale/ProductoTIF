@@ -9,7 +9,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Registro Cliente - Formoid html form</title>
+	<title>Registro Cliente</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="blurBg-false" style="background-color:#EBEBEB">
