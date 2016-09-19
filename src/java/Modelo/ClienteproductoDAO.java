@@ -15,7 +15,7 @@ import java.util.HashMap;
  *
  * @author PcIsa
  */
-public class Cliente_productoDAO {
+public class ClienteproductoDAO {
 
     public ConexionMysql _conexion = new ConexionMysql();
 

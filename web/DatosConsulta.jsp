@@ -4,7 +4,7 @@
     Author     : PcIsa
 --%>
 
-<%@page import="Controlador.Controller_Producto_Cliente"%>
+<%@page import="Controlador.ControllerProductoCliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="blurBg-true" style="background-color:#ebeaea">
-    <% Controller_Producto_Cliente pc = new Controller_Producto_Cliente();
+    <% ControllerProductoCliente pc = new ControllerProductoCliente();
         
     %>
 <!-- Start Formoid form-->

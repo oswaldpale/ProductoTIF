@@ -7,14 +7,14 @@ package Controlador;
 
 import Entidades.Producto;
 import Entidades.Usuario;
-import Modelo.Cliente_productoDAO;
+import Modelo.ClienteproductoDAO;
 
 /**
  *
  * @author PcIsa
  */
-public class Controller_Producto_Cliente {
-    Cliente_productoDAO cpdDao = new Cliente_productoDAO(); 
+public class ControllerProductoCliente {
+    ClienteproductoDAO cpdDao = new ClienteproductoDAO(); 
    
     public boolean Cliente_Producto_Login(Usuario u, Producto p){
         return cpdDao.Cliente_Producto_Login(u, p);

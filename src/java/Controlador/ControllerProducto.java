@@ -14,11 +14,9 @@ import java.util.ArrayList;
  * @author oswaldpale
  */
 public class ControllerProducto {
-<<<<<<< HEAD
-    ProductoDao _p = new ProductoDao();
-=======
+
     public ProductoDao _p = new ProductoDao();
->>>>>>> pamo
+
     
     public boolean insertarProducto(Producto producto){
         return _p.insertarProducto(producto);

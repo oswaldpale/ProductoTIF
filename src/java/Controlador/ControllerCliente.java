@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author PcIsa
  */
-public class ControllerRegistrarCliente {
+public class ControllerCliente {
     public UsuarioDao _cliente = new UsuarioDao();
     public boolean insertarCliente(Usuario usu){
         return _cliente.insertarCliente(usu);

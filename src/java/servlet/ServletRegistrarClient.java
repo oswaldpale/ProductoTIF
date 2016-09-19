@@ -5,7 +5,7 @@
  */
 package servlet;
 
-import Controlador.ControllerRegistrarCliente;
+import Controlador.ControllerCliente;
 import Entidades.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -31,7 +31,7 @@ public class ServletRegistrarClient extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    ControllerRegistrarCliente _controlUsuario = new ControllerRegistrarCliente();
+    ControllerCliente _controlUsuario = new ControllerCliente();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -51,16 +51,12 @@ public class ServletRegistrarClient extends HttpServlet {
             
 
             if(_controlUsuario.insertarCliente(usu)){
-<<<<<<< HEAD
+
                   response.sendRedirect("/ProductoTIF/DatosConsulta.jsp");
              }else{
                   response.sendRedirect("/ProductoTIF/index.jsp");
-=======
-                response.sendRedirect("/ProductoTIF/index.jsp");
-             }else{
-                response.sendRedirect("/ProductoTIF/Producto.jsp");
->>>>>>> pamo
-             }
+
+             } 
         } finally {
             out.close();
         }

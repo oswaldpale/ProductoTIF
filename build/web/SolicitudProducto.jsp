@@ -1,15 +1,9 @@
-<%-- 
-    Document   : SolicitudProducto
-    Created on : 16/09/2016, 03:54:03 PM
-    Author     : oswaldpale
---%>
-
 
 <%@page import="Controlador.ControllerProducto"%>
 <%@page import="java.util.Map"%>
 <%@page import="Controlador.ControllerSistemaOperativo"%>
 <%@page import="Controlador.ControllerTecnico"%>
-<%@page import="Controlador.ControllerRegistrarCliente"%>
+<%@page import="Controlador.ControllerCliente"%>
 <%@page import="Controlador.ControllerTipoServicio"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,7 +21,7 @@
     </head>
     <body>
         <% ControllerTipoServicio servicio = new ControllerTipoServicio();
-            ControllerRegistrarCliente cliente = new ControllerRegistrarCliente();
+            ControllerCliente cliente = new ControllerCliente();
             ControllerTecnico tecnico = new ControllerTecnico();
             ControllerSistemaOperativo sistema = new ControllerSistemaOperativo();
             ControllerProducto producto = new ControllerProducto();

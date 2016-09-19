@@ -6,7 +6,7 @@
 package servlet;
 
 import Controlador.ControllerProducto;
-import Controlador.Controller_Producto_Cliente;
+import Controlador.ControllerProductoCliente;
 import Entidades.Producto;
 import Entidades.Usuario;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author PcIsa
  */
 public class ServletConsultarProducto extends HttpServlet {
-    Controller_Producto_Cliente _pc = new Controller_Producto_Cliente();
+    ControllerProductoCliente _pc = new ControllerProductoCliente();
     
     /**
      * 
