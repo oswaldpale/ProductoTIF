@@ -23,8 +23,8 @@ public class ControllerTipoServicio {
         ArrayList<TipoServicio> dt = _Servicio.ConsultarTipoServicio();
 
         String html = "  <div class=\"col-xs-8\">\n"
-                      + "  <select class=\"form-control\" id=\"state_id\">";
-        
+                      + "  <select class=\"form-control\" id=\"state_id\" name=\"nservicio\">";
+        html = html + "<option value='" + 0 + "'>" + "  " + "</option>";
         for (TipoServicio service : dt) {
             
             html = html + "<option value='" + service.getCodigo() + "'>" + service.getNombreServicio() + "</option>";

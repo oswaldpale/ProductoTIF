@@ -22,7 +22,7 @@ public class ControllerTipoEquipo {
 
         String html = "  <div class=\"col-xs-8\">\n"
                       + "  <select class=\"form-control\" id=\"tipoesquipo_id\" name =\"ntipoequipo\">";
-        
+        html = html + "<option value='" + 0 + "'>" + "  " + "</option>";
         for (TipoEquipo equipo : dt) {
             
             html = html + "<option value='" + equipo.getIdtipoequipo()+ "'>" + equipo.getNombreTipo() + "</option>";

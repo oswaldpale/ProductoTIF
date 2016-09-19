@@ -10,6 +10,7 @@ package Entidades;
  * @author oswaldpale
  */
 public class Producto {
+    private String codigo;
     private String idtipoequipo;
     private String idmarca;
     private String modelo;
@@ -69,5 +70,19 @@ public class Producto {
      */
     public void setSerial(String serial) {
         this.serial = serial;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public String getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 }

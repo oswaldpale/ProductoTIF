@@ -5,6 +5,11 @@
 --%>
 
 
+<%@page import="Controlador.ControllerProducto"%>
+<%@page import="java.util.Map"%>
+<%@page import="Controlador.ControllerSistemaOperativo"%>
+<%@page import="Controlador.ControllerTecnico"%>
+<%@page import="Controlador.ControllerRegistrarCliente"%>
 <%@page import="Controlador.ControllerTipoServicio"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,45 +26,56 @@
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     </head>
     <body>
-       <% ControllerTipoServicio servicio = new ControllerTipoServicio();
-       %>
+        <% ControllerTipoServicio servicio = new ControllerTipoServicio();
+            ControllerRegistrarCliente cliente = new ControllerRegistrarCliente();
+            ControllerTecnico tecnico = new ControllerTecnico();
+            ControllerSistemaOperativo sistema = new ControllerSistemaOperativo();
+            ControllerProducto producto = new ControllerProducto();
+            String valor = request.getParameter("valor");
+            System.out.println(valor);
+        %>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-3">
                     <div class="well well-sm">
-                        <form class="form-horizontal" method="post">
+                        <form class="form-horizontal" method="post" action="ServletSolicitudRevision">
                             <fieldset>
-                                <legend class="text-center header">Información del Equipo</legend>
+                                <legend class="text-center header">Solicitud de Revisión</legend>
                                 <div class="form-group">
-                                    <label for="inputName" class="control-label col-xs-3">Tipo Servicio:</label>
-                                    <%= servicio.consultarTipoServicio()%>
+                                    <label for="inputName" class="control-label col-xs-3">Cliente:</label>
+                                    <%= cliente.consultarCliente()%>
                                 </div>
                                 <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                                    <label for="inputName" class="control-label col-xs-3">Tecnico:</label>
+                                    <%= tecnico.consultarTecnicos()%>
+                                </div>
+                                <fieldset>
+                                    <legend class="text-center header">Información del Equipo</legend>
+                                     <div class="form-group">
+                                        <label for="inputName" class="control-label col-xs-3">Nombre Equipo:</label>
+                                        <%=producto.consultarProducto() %>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                                    <div class="form-group">
+                                        <label for="inputName" class="control-label col-xs-3">Sistema Operativo:</label>
+                                        <%= sistema.consultarSistemaOperativo()%>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <textarea class="form-control" id="diagnostico" name="diagnostico" placeholder="Fallos que presenta el dispositivo." rows="7"></textarea>
+                                    <div class="form-group">
+                                        <label for="inputName" class="control-label col-xs-3">Tipo Servicio:</label>
+                                        <%= servicio.consultarTipoServicio()%>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-12 text-center">
-                                         <i class="icon-bar"></i>
-                                        <button type="submit" class="btn btn-danger">Registrar</button>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"></span>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="diagnostico" name="ndiagnostico" placeholder="Fallos que presenta el dispositivo." rows="7"></textarea>
+                                        </div>
                                     </div>
-                                </div>
-                            </fieldset>
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                            <i class="icon-bar"></i>
+                                            <button type="submit" class="btn btn-danger"  >Registrar</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
                         </form>
                     </div>
                 </div>

@@ -20,8 +20,7 @@ public class ControllerSistemaOperativo {
         ArrayList<SistemaOperativo> dt = _tipoEquipo.ConsultarSistemaOperativo();
 
         String html = "  <div class=\"col-xs-8\">\n"
-                      + "  <select class=\"form-control\" id=\"sistemaoperativo_id\">";
-        
+                      + "  <select class=\"form-control\" id=\"sistemaoperativo_id\" name=\"nsistemaoperativo\">";
         for (SistemaOperativo sistema : dt) {
             
             html = html + "<option value='" + sistema.getIdsistema()+ "'>" + sistema.getNombreSistema() + "</option>";

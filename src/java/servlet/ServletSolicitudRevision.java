@@ -5,6 +5,8 @@
  */
 package servlet;
 
+import Controlador.ControllerValoracionProducto;
+import Entidades.ValoracionProducto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
@@ -13,16 +15,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Controlador.ControllerProducto;
-import Entidades.Producto;
-import javax.servlet.http.HttpSession;
+
 /**
  *
  * @author oswaldpale
  */
-public class ServletProducto extends HttpServlet {
-
-     ControllerProducto _producto = new ControllerProducto();
+public class ServletSolicitudRevision extends HttpServlet {
+     ControllerValoracionProducto valoracion = new ControllerValoracionProducto();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,17 +37,34 @@ public class ServletProducto extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             /* TODO output your page here. You may use following sample code. */
-            Producto p = new Producto();
-            p.setIdtipoequipo(request.getParameter("ntipoequipo"));
-            p.setSerial(request.getParameter("nserial"));
-            p.setModelo(request.getParameter("nmodelo"));
-            p.setIdmarca(request.getParameter("nmarca"));
+           Map<String, String[]> v = request.getParameterMap();
             
-             if(_producto.insertarProducto(p)){
-               response.sendRedirect("/ProductoTIF/index.jsp");
-             }else{
-               response.sendRedirect("/ProductoTIF/Producto.jsp");
-             }
+            ValoracionProducto  items= new ValoracionProducto(); 
+
+            items.setCliente_cc_cliente(request.getParameter("ncliente"));
+            items.setTecnico_cc_tecnico(request.getParameter("ntecnico"));
+            items.setProductoid(request.getParameter("nproducto"));
+            items.setId_sistema_operativo(request.getParameter("nsistemaoperativo"));
+            items.setId_tipo_servicio(request.getParameter("nservicio"));
+            items.setDiagnostico_inicial(request.getParameter("ndiagnostico"));
+                      
+            if(valoracion.insertarValoracionProducto(items)){
+//                 RequestDispatcher dispatcher =getServletContext().getRequestDispatcher("/Producto.jsp");
+//                 dispatcher.forward(request, response);
+                   response.sendRedirect("ProductoTIF/index.jsp");
+            }else{
+                
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>El registro ya esta En reparación</title>");            
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1>Servlet ServletSolicitudRevision at " + request.getContextPath() + "</h1>");
+                out.println("</body>");
+                out.println("</html>");
+            }
+            
         } finally {
             out.close();
         }

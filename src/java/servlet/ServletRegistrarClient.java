@@ -51,9 +51,15 @@ public class ServletRegistrarClient extends HttpServlet {
             
 
             if(_controlUsuario.insertarCliente(usu)){
+<<<<<<< HEAD
                   response.sendRedirect("/ProductoTIF/DatosConsulta.jsp");
              }else{
                   response.sendRedirect("/ProductoTIF/index.jsp");
+=======
+                response.sendRedirect("/ProductoTIF/index.jsp");
+             }else{
+                response.sendRedirect("/ProductoTIF/Producto.jsp");
+>>>>>>> pamo
              }
         } finally {
             out.close();
