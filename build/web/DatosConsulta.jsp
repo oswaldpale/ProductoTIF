@@ -4,46 +4,114 @@
     Author     : PcIsa
 --%>
 
+<%@page import="Entidades.Cliente_producto_Valoracion"%>
+<%@page import="Entidades.Producto"%>
+<%@page import="Entidades.Usuario"%>
 <%@page import="Controlador.ControllerProductoCliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title>Datos Consulta</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body class="blurBg-true" style="background-color:#ebeaea">
-    <% ControllerProductoCliente pc = new ControllerProductoCliente();
-        
-    %>
-<!-- Start Formoid form-->
-<link rel="stylesheet" href="CSS/DatosConsultaTodo/formoid-flat-green.css" type="text/css" />
-<script type="text/javascript" src="JS/DatosConsultaTodo/jquery.min.js"></script>
-<form class="formoid-flat-green" style="background-color:#e3e3e3;font-size:14px;font-family:'Lato', sans-serif;color:#666666;max-width:680px;min-width:150px" method="post"><div class="title"><h2>Datos Consulta</h2></div>
-	<div class="element-name"><label class="title"></label><span class="nameFirst"><input  type="text" size="8" name="name[first]" /><label class="subtitle">Nombre</label></span><span class="nameLast"><input  type="text" size="14" name="name[last]" /><label class="subtitle">Apellido</label></span></div>
-	<div class="element-number"><label class="title">Cedula</label><input class="large" type="text" min="0" max="99999999" name="number"  value=""/></div>
-	<div class="element-input"><label class="title">Ocupacion</label><input class="large" type="text" name="input" /></div>
-	<div class="element-number"><label class="title">celular</label><input class="large" type="text" min="0" max="99999999" name="number2"  value=""/></div>
-	<div class="element-number"><label class="title">Telefono</label><input class="large" type="text" min="0" max="99999999" name="number1"  value=""/></div>
-	<div class="element-email"><label class="title">Email</label><input class="large" type="email" name="email" value="" /></div>
-	<div class="element-number"><label class="title">N_Servicio</label><input class="large" type="text" min="0" max="99999999" name="number3"  value=""/></div>
-	<div class="element-input"><label class="title">fecha_Ingreso</label><input class="large" type="text" name="input1" /></div>
-	<div class="element-input"><label class="title">Elemento</label><input class="large" type="text" name="input2" /></div>
-	<div class="element-input"><label class="title">Tipo de servicio</label><input class="large" type="text" name="input3" /></div>
-	<div class="element-input"><label class="title">Marca</label><input class="large" type="text" name="input6" /></div>
-	<div class="element-input"><label class="title">Sistema Operativo</label><input class="large" type="text" name="input5" /></div>
-	<div class="element-input"><label class="title">Modelo</label><input class="large" type="text" name="input4" /></div>
-	<div class="element-number"><label class="title">N_Servicio2</label><input class="large" type="text" min="0" max="99999999" name="number4"  value=""/></div>
-	<div class="element-input"><label class="title">Cambio de parte ?</label><input class="large" type="text" name="input7" /></div>
-	<div class="element-input"><label class="title">Pruba Realizada</label><input class="large" type="text" name="input8" /></div>
-	<div class="element-input"><label class="title">Reporte final</label><input class="large" type="text" name="input9" /></div>
-	<div class="element-textarea"><label class="title">Recomendaciones</label><textarea class="medium" name="textarea" cols="20" rows="5" ></textarea></div>
-	<div class="element-number"><label class="title">Valor Servicio</label><input class="large" type="text" min="0" max="99999999" name="number5"  value=""/></div>
-<div class="submit"><input type="submit" value="Aceptar"/></div></form><p class="frmd"><a href="http://formoid.com/v29.php">javascript form</a> Formoid.com 2.9</p><script type="text/javascript" src="JS/DatosConsultaTodo/formoid-flat-green.js"></script>
-<!-- Stop Formoid form-->
+    <head>
+        <meta charset="utf-8" />
+        <title>Datos Consulta</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"  type="text/css" href="CSS/normalize.css" />    
+        <link rel="stylesheet"  type="text/css" href="CSS/style.css" /> 
+        <link rel="stylesheet" href="CSS/bootstrap.min.css">
+        <link rel="stylesheet" href="CSS/bootstrap-theme.min.css">
+        <script type="text/javascript" src="JS/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+    </head>
+    <body class="blurBg-true" style="background-color:#ebeaea">
+        <% ControllerProductoCliente pc = new ControllerProductoCliente();
+            Usuario _usuario = new Usuario();
+            Producto _producto = new Producto();
+            Cliente_producto_Valoracion infProducto = new Cliente_producto_Valoracion();
+            Usuario _infCliente = new Usuario();
+            _usuario.setCedula(request.getParameter("cc_cliente"));
+            _producto.setSerial(request.getParameter("n_serial"));
+            _infCliente =(Usuario) pc.Consulta_Usuario(_usuario);
+            infProducto = (Cliente_producto_Valoracion) pc.Consulta_Cliente_producto_valoracion(_producto);
 
+        %>
+        <!-- Start Formoid form-->
+      <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-md-offset-3">
+                    <div class="well well-sm">
+                        <form class="form-horizontal" method="post" action="ServletProducto">
+                            <fieldset>
+                                <legend class="text-center header bg-primary">MANTENIMIENTO</legend>
+                                <fieldset title="Cliente">
+                                    <legend class="text-left bg-primary">Datos del Cliente</legend>
+                                    <div class="form-group">
+                                        <label for="inputName" class="control-label col-xs-2">Nombre</label>
+                                        <div class="col-xs-10">
+                                            <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getNombre() %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputName" class="control-label col-xs-2">Telefono</label>
+                                        <div class="col-xs-4">
+                                            <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getTelefono()%>">
+                                        </div>
+                                        <label for="inputName" class="control-label col-xs-2">Celular</label>
+                                        <div class="col-xs-4">
+                                            <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getCelular()%>">
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="inputName" class="control-label col-xs-2">Ocupación</label>
+                                        <div class="col-xs-10">
+                                            <input name="nocupacion" type="text" class="form-control" readonly="true" value="<%=_infCliente.getOcupacion() %>">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend class="text-left bg-primary">Información del Mantenimiento</legend>
+                                </fieldset>
+                                      <div class="form-group">
+                                        <label for="inputName" class="control-label col-xs-2">Equipo</label>
+                                        <div class="col-xs-10">
+                                            <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=infProducto.getNombreEquipo() %>">
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="control-label col-xs-3">Marca:</label>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="control-label col-xs-3">Serial:</label>
+                                    <div class="col-xs-8">
+                                        <input name="nserial" type="text" class="form-control" readonly="true">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-10 text-center">
+                                      
+                                    <div class="col-md-5">
+                                        <label for="inputName" class="control-label col-xs-2">Modelo:</label>
+                                        <input id="lmodelo" name="nmodelo" type="text" class="form-control" readonly>
+                                    </div>
+                                    <div class=" col-md-5">
+                                        <label for="inputName" class="control-label col-xs-2">Modelo:</label>
+                                        <input id="lmodelo" name="nmodelo" type="text" class="form-control" readonly/>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 text-center">
+                                         <i class="icon-bar"></i>
+                                        <button type="submit" class="btn btn-success"  >Solicitar Confirmación del Arreglo</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stop Formoid form-->
 
-
-</body>
+    </body>
 </html>

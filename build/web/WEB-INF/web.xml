@@ -12,6 +12,10 @@
         <servlet-name>ServletConsultarProducto</servlet-name>
         <servlet-class>servlet.ServletConsultarProducto</servlet-class>
     </servlet>
+      <servlet>
+        <servlet-name>ServletSolicitudRevision</servlet-name>
+        <servlet-class>servlet.ServletSolicitudRevision</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletProducto</servlet-name>
         <url-pattern>/ServletProducto</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ServletConsultarProducto</servlet-name>
         <url-pattern>/ServletConsultarProducto</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>ServletSolicitudRevision</servlet-name>
+        <url-pattern>/ServletSolicitudRevision</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -22,7 +22,6 @@
                                
                                 <div class="form-group">
                                     <label for="inputName" class="control-label col-xs-3">Equipo:</label>
-                                  
                                 </div>
                                 <fieldset>
                                     <div class="form-group">

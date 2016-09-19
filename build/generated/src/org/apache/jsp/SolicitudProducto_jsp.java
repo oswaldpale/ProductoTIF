@@ -7,7 +7,7 @@ import Controlador.ControllerProducto;
 import java.util.Map;
 import Controlador.ControllerSistemaOperativo;
 import Controlador.ControllerTecnico;
-import Controlador.ControllerRegistrarCliente;
+import Controlador.ControllerCliente;
 import Controlador.ControllerTipoServicio;
 
 public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
@@ -56,8 +56,6 @@ public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
@@ -73,7 +71,7 @@ public final class SolicitudProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("    <body>\r\n");
       out.write("        ");
  ControllerTipoServicio servicio = new ControllerTipoServicio();
-            ControllerRegistrarCliente cliente = new ControllerRegistrarCliente();
+            ControllerCliente cliente = new ControllerCliente();
             ControllerTecnico tecnico = new ControllerTecnico();
             ControllerSistemaOperativo sistema = new ControllerSistemaOperativo();
             ControllerProducto producto = new ControllerProducto();

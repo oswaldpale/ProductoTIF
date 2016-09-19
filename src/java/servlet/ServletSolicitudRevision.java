@@ -49,9 +49,7 @@ public class ServletSolicitudRevision extends HttpServlet {
             items.setDiagnostico_inicial(request.getParameter("ndiagnostico"));
                       
             if(valoracion.insertarValoracionProducto(items)){
-//                 RequestDispatcher dispatcher =getServletContext().getRequestDispatcher("/Producto.jsp");
-//                 dispatcher.forward(request, response);
-                   response.sendRedirect("ProductoTIF/index.jsp");
+                   response.sendRedirect("/ProductoTIF/index.jsp");
             }else{
                 
                 out.println("<!DOCTYPE html>");
