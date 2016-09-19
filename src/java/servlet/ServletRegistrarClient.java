@@ -52,10 +52,9 @@ public class ServletRegistrarClient extends HttpServlet {
             
 
             if(_controlUsuario.insertarCliente(usu)){
-                  dispacher = getServletContext().getRequestDispatcher("/Principal.jsp");
-                  dispacher.forward(request, response);
+                response.sendRedirect("/ProductoTIF/index.jsp");
              }else{
-                  dispacher = getServletContext().getRequestDispatcher("/Principal.jsp");
+                response.sendRedirect("/ProductoTIF/Producto.jsp");
              }
         } finally {
             out.close();

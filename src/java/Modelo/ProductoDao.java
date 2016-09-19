@@ -7,6 +7,8 @@ package Modelo;
 
 import Conexion.ConexionMysql;
 import Entidades.Producto;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -34,6 +36,33 @@ public class ProductoDao {
                         + "    )";
        return _conexion.SetData(sql);
    }
+
+    public ArrayList<Producto> consultarProductos() {
+        String sql = "SELECT "
+                        + " idproducto, UPPER(CONCAT( tq.nombreEquipo,' ',m.nombremarca,' ', p.modelo, ' ', p.n_serie)) AS nombre "
+                        + "FROM "
+                        + " producto p "
+                        + "INNER JOIN "
+                        + " marca m ON "
+                        + " p.idmarca = m.idmarca "
+                        + "INNER JOIN "
+                        + "tipoequipo tq ON "
+                        + "tq.idtipoequipo = p.id_tipo_equipo";
+        
+         ArrayList<Producto> SetServicio = new ArrayList<Producto>();
+        ArrayList dt = _conexion.GetData(sql);
+        
+        for (Object object : dt) {
+            
+             Producto registro = new Producto();
+             HashMap item =(HashMap) object;
+             registro.setCodigo(item.get("idproducto").toString());
+             registro.setModelo(item.get("nombre").toString());
+             SetServicio.add(registro);
+        }
+
+       return SetServicio; 
+    }
    
   
    

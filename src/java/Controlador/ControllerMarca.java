@@ -21,7 +21,7 @@ public class ControllerMarca {
 
         String html = "  <div class=\"col-xs-8\">\n"
                       + "  <select class=\"form-control\" id=\"marca_id\" name =\"nmarca\" >" ;
-        
+        html = html + "<option value='" + 0 + "'>" + "  " + "</option>";
         for (Marca marc : dt) {
             
             html = html + "<option value='" + marc.getIdmarca()+ "'>" + marc.getNombre() + "</option>";

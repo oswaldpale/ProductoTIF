@@ -3,12 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/src/java/Modelo/UsuarioDao.java</file>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/web/RegistrarCliente.jsp</file>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/src/java/servlet/ServletProducto.java</file>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/src/java/servlet/ServletRegistrarClient.java</file>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/src/java/Entidades/Usuario.java</file>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/src/java/Conexion/ConexionMysql.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/mostrarConsulta.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/servicios.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/RegistrarCliente.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/Producto.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/index.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/ValoracionProductoDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletRegistrarClient.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/SistemaOperativo.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Conexion/ConexionMysql.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerValoracionProducto.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/soporte.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/ProductoDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/Principal.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerMarca.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/consulta.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerSistemaOperativo.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerTipoServicio.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerProducto.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerRegistrarCliente.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/Producto.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/SolicitudProducto.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerTipoEquipo.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/ConsultaEquipo.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletProducto.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/UsuarioDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletSolicitudRevision.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/MantenimientoPiezas.jsp</file>
         </group>
     </open-files>
 </project-private>

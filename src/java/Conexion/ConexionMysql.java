@@ -29,9 +29,9 @@ public class ConexionMysql {
    
     private String getConnectionString() throws  IOException {
       
-        String user = "pamo";
-        String password = "pamo";
-        String connect = "jdbc:mysql://52.53.178.24:3306/serviciotecnico?" + "user=" + user + "&password=" + password + "";
+        String user = "root";
+        String password = "root";
+        String connect = "jdbc:mysql://127.0.0.1:3306/serviciotecnico?" + "user=" + user + "&password=" + password + "";
         return connect;
     }
 
@@ -74,7 +74,7 @@ public class ConexionMysql {
         try {
             Connection conn = Open();
             st = conn.createStatement();
-            if (st.executeUpdate(sql)>1) {
+            if (st.executeUpdate(sql)>=1) {
                 st.close();
                 conn.close();
                 return true;

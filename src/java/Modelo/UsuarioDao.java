@@ -6,7 +6,10 @@
 package Modelo;
 
 import Conexion.ConexionMysql;
+import Entidades.Marca;
 import Entidades.Usuario;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -31,4 +34,25 @@ public class UsuarioDao {
                              + "    )";
             return _connection.SetData(sql);
         }
+
+    public ArrayList<Usuario> consultarClientes() {
+        String sql = "SELECT "
+                        + "    cc_cliente, "
+                        + "    CONCAT(nombre,' ',apellido)  AS nombre "
+                        + "FROM "
+                        + "    cliente";
+        ArrayList<Usuario> SetServicio = new ArrayList<Usuario>();
+        ArrayList dt = _connection.GetData(sql);
+        
+        for (Object object : dt) {
+            
+             Usuario registro = new Usuario();
+             HashMap item =(HashMap) object;
+             registro.setCedula(item.get("cc_cliente").toString());
+             registro.setNombre(item.get("nombre").toString());
+             SetServicio.add(registro);
+        }
+
+       return SetServicio; 
+    }
 }
