@@ -35,6 +35,24 @@
 
         %>
         <!-- Start Formoid form-->
+        
+        <header id="cabecera">
+            <figure>
+                <img src="Images/logo.png"/>
+            </figure>
+        </header>
+        <nav id="menu2"> 
+            <ul class="nav nav-tabs">
+                <li role="presentation"> <a href="index.jsp">Inicio</a></li>
+                <li role="presentation"> <a href="accesorios.html">Accesorios</a> </li>
+                <li role="presentation"> <a href="soporte.jsp">Soporte</a> </li>
+                <li role="presentation"> <a href="servicios.jsp">Servicios</a> </li>
+                <li role="presentation" class="active"> <a href="ConsultaEquipo.jsp">Consultar Registros</a> </li>
+                <li role="presentation"> <a href="acercadeEAT.html">acerca de EAT</a> </li>
+            </ul>
+        </nav>
+        
+        
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-md-offset-3">

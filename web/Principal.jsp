@@ -241,7 +241,7 @@
                     <li role="presentation"> <a href="accesorios.html">Accesorios</a> </li>
                     <li role="presentation"> <a href="soporte.jsp">Soporte</a> </li>
                     <li role="presentation"> <a href="servicios.jsp">Servicios</a> </li>
-                    <li role="presentation" class="active"> <a href="consulta.jsp">Consultar Registros</a> </li>
+                    <li role="presentation" class="active"> <a href="ConsultaE.jsp">Consultar Registros</a> </li>
                     <li role="presentation"> <a href="acercadeEAT.html">acerca de EAT</a> </li>
                 </ul>
             </nav>
