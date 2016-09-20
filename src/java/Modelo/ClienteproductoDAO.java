@@ -39,7 +39,7 @@ public class ClienteproductoDAO {
                     + "on vp.id_sistema_operativo = tp.idsistema "
                     + "inner join tiposervicio ts "
                     + "on vp.id_tipo_servicio = ts.idservicio "
-                    + "where p.n_serie = "+p.getSerial()+";";
+                    + "where p.n_serie = "+p.getSerial()+" AND vp.estado_producto='A';";
 
         Cliente_producto_Valoracion pa = new Cliente_producto_Valoracion();
         ArrayList dt = _conexion.GetData(sql);

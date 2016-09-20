@@ -9,7 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Mantenimiento Piezas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"  type="text/css" href="CSS/normalize.css" />    
+        <link rel="stylesheet"  type="text/css" href="CSS/style.css" /> 
+        <link rel="stylesheet" href="CSS/bootstrap.min.css">
+        <link rel="stylesheet" href="CSS/bootstrap-theme.min.css">
+        <script type="text/javascript" src="JS/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     </head>
     <body>
          <div class="container">
@@ -18,7 +25,7 @@
                     <div class="well well-sm">
                         <form class="form-horizontal" method="post" action="ServletSolicitudRevision">
                             <fieldset>
-                                <legend class="text-center header">Mantenimiento del Equipo</legend>
+                                <legend class="text-center header">Revisión del Equipo</legend>
                                
                                 <div class="form-group">
                                     <label for="inputName" class="control-label col-xs-3">Equipo:</label>

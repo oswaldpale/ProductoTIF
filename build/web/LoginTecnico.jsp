@@ -54,7 +54,7 @@
 
 <form class="formoid-biz-green" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post" action="ServletLoginTecnico"><div class="title"><h2>Login Tecnico</h2></div>
 	<div class="element-input"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" name="Usuario" required="required" placeholder="Usuario"/><span class="icon-place"></span></div></div>
-	<div class="element-number"><label class="title"><span class="required">*</span></label><input class="large" type="text" min="0" max="99999999999" name="contrasena" required="required" placeholder="Contraseña" value=""/></div>
+	<div class="element-number"><label class="title"><span class="required">*</span></label><input class="large" type="text"  name="contrasena" required="required" placeholder="Contraseña" value=""/></div>
 <div class="submit"><input type="submit" value="Buscar"/></div></form><p class="frmd"></p><script type="text/javascript" src="JS/ConsultaEquipo/formoid-biz-green.js"></script>
 <!-- Stop Formoid form-->
 
