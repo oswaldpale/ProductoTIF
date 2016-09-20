@@ -44,11 +44,11 @@ public class ServletLoginTecnico extends HttpServlet {
         try {
             /* TODO output your page here. You may use following sample code. */
             Tecnico t = new Tecnico();
-            t.setCodigo(request.getParameter("cc_tecnico"));
+            t.setUsuario(request.getParameter("Usuario"));
             t.setPass(request.getParameter("contrasena"));
             
              if(_t.tecnico_Login(t)){
-                  response.sendRedirect("/ProductoTIF/DatosConsulta.jsp?cc_cliente="+t.getCodigo()
+                  response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp?Usuario="+t.getUsuario()
                   +"&contrasena="+t.getPass());
              }else{
                   response.sendRedirect("/ProductoTIF/index.jsp");

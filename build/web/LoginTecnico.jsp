@@ -33,7 +33,7 @@
             <ul class="nav nav-tabs">
                 <li role="presentation"> <a href="index.jsp">Inicio</a></li>
                 <li role="presentation"> <a href="accesorios.html">Accesorios</a> </li>
-                <li role="presentation class="active""> <a href="LoginTecnico.jsp">Soporte</a> </li>
+                <li role="presentation" class="active"> <a href="LoginTecnico.jsp">Soporte</a> </li>
                 <li role="presentation"> <a href="servicios.jsp">Servicios</a> </li>
                 <li role="presentation"> <a href="ConsultaEquipo.jsp">Consultar Registros</a> </li>
                 <li role="presentation"> <a href="acercadeEAT.html">acerca de EAT</a> </li>
@@ -53,7 +53,7 @@
             </header>
 
 <form class="formoid-biz-green" style="background-color:#1A2223;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="post" action="ServletLoginTecnico"><div class="title"><h2>Login Tecnico</h2></div>
-	<div class="element-number"><label class="title"><span class="required">*</span></label><input class="large" type="text" min="0" max="99999999999" name="cc_tecnico" required="required" placeholder="Cedula" value=""/></div>
+	<div class="element-input"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" name="Usuario" required="required" placeholder="Usuario"/><span class="icon-place"></span></div></div>
 	<div class="element-number"><label class="title"><span class="required">*</span></label><input class="large" type="text" min="0" max="99999999999" name="contrasena" required="required" placeholder="Contraseña" value=""/></div>
 <div class="submit"><input type="submit" value="Buscar"/></div></form><p class="frmd"></p><script type="text/javascript" src="JS/ConsultaEquipo/formoid-biz-green.js"></script>
 <!-- Stop Formoid form-->
