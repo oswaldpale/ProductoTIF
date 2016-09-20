@@ -33,7 +33,7 @@
             <ul class="nav nav-tabs">
                 <li role="presentation" class="active"> <a href="index.jsp">Inicio</a></li>
                 <li role="presentation"> <a href="accesorios.html">Accesorios</a> </li>
-                <li role="presentation"> <a href="soporte.jsp">Soporte</a> </li>
+                <li role="presentation"> <a href="LoginTecnico.jsp">Soporte</a> </li>
                 <li role="presentation"> <a href="servicios.jsp">Servicios</a> </li>
                 <li role="presentation"> <a href="ConsultaEquipo.jsp">Consultar Registros</a> </li>
                 <li role="presentation"> <a href="acercadeEAT.html">acerca de EAT</a> </li>

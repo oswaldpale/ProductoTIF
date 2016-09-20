@@ -6,7 +6,9 @@
 package Modelo;
 
 import Conexion.ConexionMysql;
+import Entidades.Producto;
 import Entidades.Tecnico;
+import Entidades.Usuario;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,28 +18,43 @@ import java.util.HashMap;
  */
 public class TecnicoDao {
    public ConexionMysql _conexion = new ConexionMysql();
-    public ArrayList<Tecnico> ConsultarTecnicos(){
-       
-        String sql = "SELECT "
-                        + "    cc_tecnico, "
-                        + "    CONCAT(nombre,' ',apellido)  AS nombre "
-                        + "FROM "
-                        + "    tecnico";
-       
-        ArrayList<Tecnico> SetServicio = new ArrayList<Tecnico>();
-        ArrayList dt = _conexion.GetData(sql);
+//    public ArrayList<Tecnico> ConsultarTecnicos(){
+//       
+//        String sql = "SELECT "
+//                        + "    cc_tecnico, "
+//                        + "    CONCAT(nombre,' ',apellido)  AS nombre "
+//                        + "FROM "
+//                        + "    tecnico";
+//       
+//        ArrayList<Tecnico> SetServicio = new ArrayList<Tecnico>();
+//        ArrayList dt = _conexion.GetData(sql);
+//        
+//        for (Object object : dt) {
+//            
+//             Tecnico registro = new Tecnico();
+//             HashMap item =(HashMap) object;
+//             registro.setCodigo(item.get("cc_tecnico").toString());
+//             registro.setNombre(item.get("nombre").toString());
+//             SetServicio.add(registro
+//             );
+//        }
+//
+//       return SetServicio; 
+//       
+//    }
+    
+    public boolean TecnicoLogin(Tecnico t) {
+        String sql = ""
+                        + "select count(*) as existe from tecnico "
+                        + "where cc_tecnico = "+t.getCodigo()+" and contrasena = '"+t.getPass()+"';";
         
-        for (Object object : dt) {
-            
-             Tecnico registro = new Tecnico();
-             HashMap item =(HashMap) object;
-             registro.setCodigo(item.get("cc_tecnico").toString());
-             registro.setNombre(item.get("nombre").toString());
-             SetServicio.add(registro
-             );
+        ArrayList dt = _conexion.GetData(sql);
+        for (Object object : dt) {            
+            HashMap item = (HashMap) object;
+            if(Integer.parseInt(item.get("existe").toString())>0){
+                return true;
+            }            
         }
-
-       return SetServicio; 
-       
+        return false;
     }
 }

@@ -10,7 +10,7 @@ package Entidades;
  * @author oswaldpale
  */
 public class Tecnico {
-    private String codigo;
+    private String cc_cedula;
     private String usuario;
     private String pass;
     private String apellido;
@@ -19,17 +19,17 @@ public class Tecnico {
     private String nombre;
 
     /**
-     * @return the codigo
+     * @return the cc_cedula
      */
     public String getCodigo() {
-        return codigo;
+        return cc_cedula;
     }
 
     /**
-     * @param codigo the codigo to set
+     * @param cc_cedula the cc_cedula to set
      */
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCodigo(String cc_cedula) {
+        this.cc_cedula = cc_cedula;
     }
 
     /**
