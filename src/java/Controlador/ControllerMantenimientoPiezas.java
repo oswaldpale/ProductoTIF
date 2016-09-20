@@ -5,10 +5,26 @@
  */
 package Controlador;
 
+import Entidades.Tecnico;
+import Modelo.MantenimientoPiezaDao;
+import java.util.ArrayList;
+
 /**
  *
  * @author oswaldpale
  */
 public class ControllerMantenimientoPiezas {
-   
+    
+    public String ConsultarEquiposParaRevision(Tecnico tecnico) {
+        MantenimientoPiezaDao man = new MantenimientoPiezaDao();
+        ArrayList dt = man.ConsultarMantenimientoPendiente(tecnico);
+        String htmlcode = "";
+        for (Object object : dt) {
+            
+        }
+                
+        return htmlcode;
+    }
+    
+  
 }
