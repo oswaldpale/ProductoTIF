@@ -4,6 +4,9 @@
     Author     : oswaldpale
 --%>
 
+<%@page import="Entidades.Tecnico"%>
+<%@page import="Modelo.TecnicoDao"%>
+<%@page import="Controlador.ControllerMantenimientoPiezas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,6 +22,11 @@
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     </head>
     <body>
+        <% ControllerMantenimientoPiezas mp = new ControllerMantenimientoPiezas(); 
+           Tecnico tecnico =new Tecnico();
+           tecnico.setCodigo(request.getParameter("tecnico"));
+           
+        %>
          <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-3">
@@ -29,6 +37,7 @@
                                
                                 <div class="form-group">
                                     <label for="inputName" class="control-label col-xs-3">Equipo:</label>
+                                    <%=mp.ConsultarEquiposParaRevision(tecnico) %>
                                 </div>
                                 <fieldset>
                                     <div class="form-group">

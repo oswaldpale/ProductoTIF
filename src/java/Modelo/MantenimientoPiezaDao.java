@@ -6,6 +6,7 @@
 package Modelo;
 
 import Conexion.ConexionMysql;
+import Entidades.Cliente_producto_Valoracion;
 import Entidades.MantenimientoPiezas;
 import Entidades.Tecnico;
 import java.util.ArrayList;
@@ -56,6 +57,7 @@ public class MantenimientoPiezaDao {
 
         MantenimientoPiezas pa = new MantenimientoPiezas();
         ArrayList dt = _conexion.GetData(sql);
+       
         return dt; 
                  
     }

@@ -27,11 +27,10 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`cc_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla serviciotecnico.cliente: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla serviciotecnico.cliente: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
 INSERT INTO `cliente` (`cc_cliente`, `nombre`, `apellido`, `telefono`, `celular`, `email`, `ocupacion`) VALUES
-	('1117513159', 'OSWALDO', 'PAMO LEAL', '3134692120', '3134692120', 'OSWALDPALE@HOTMAIL.COM', 'DESEMPLEADO'),
-	('116504939', 'CARLOS', 'garzon', '333333', '3333333', 'oswaldpale@gmail.com', 'DESOCUPADO');
+	('1117513159', 'OSWALDO', 'PAMO LEAL', '3134692120', '3134692120', 'OSWALDPALE@HOTMAIL.COM', 'DESEMPLEADO');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 
 
@@ -49,10 +48,14 @@ CREATE TABLE IF NOT EXISTS `mantenimiento_piezas` (
   PRIMARY KEY (`id_reporte_mantenimiento`),
   KEY `fk_mantenimiento_piezas_valoracion_producto1` (`valoracion_producto_id_cliente_tecnico`),
   CONSTRAINT `FK_mantenimiento_piezas_valoracion_producto` FOREIGN KEY (`valoracion_producto_id_cliente_tecnico`) REFERENCES `valoracion_producto` (`id_cliente_tecnico`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla serviciotecnico.mantenimiento_piezas: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla serviciotecnico.mantenimiento_piezas: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `mantenimiento_piezas` DISABLE KEYS */;
+INSERT INTO `mantenimiento_piezas` (`id_reporte_mantenimiento`, `pruebas_realizadas`, `cambio_de_parte`, `reporte_final`, `recomendaciones`, `estado`, `valor_servicio`, `fecha_revision`, `valoracion_producto_id_cliente_tecnico`) VALUES
+	(1, 'encendido de pantalla', 'SI', 'pantalla encendida', 'limpiar la pantall', 'A', 100000, '19/09/2016', 1),
+	(2, 'teclado fallando', 'SI', 'teclado desgastado', 'limpiar teclado cada semana', 'A', 120000, '19/09/2016', 1),
+	(3, 'window', 'NO', 'WINDOW', 'WINDOW', 'A', 5000, '', 1);
 /*!40000 ALTER TABLE `mantenimiento_piezas` ENABLE KEYS */;
 
 
@@ -107,10 +110,11 @@ CREATE TABLE IF NOT EXISTS `tecnico` (
   UNIQUE KEY `Usuario` (`Usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla serviciotecnico.tecnico: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla serviciotecnico.tecnico: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `tecnico` DISABLE KEYS */;
 INSERT INTO `tecnico` (`cc_tecnico`, `nombre`, `Usuario`, `contrasena`, `apellido`, `celular`, `email`) VALUES
-	(123, 'SERGIO', 'MARIN', 'MARIN', 'MARIN', '3423\'043490', 'SERGIO@HOTMAIL.COM');
+	(123, 'SERGIO', 'MARIN', 'MARIN', 'MARIN', '3423\'043490', 'SERGIO@HOTMAIL.COM'),
+	(1117513159, 'KAROL', 'VARGAS ', 'KAROL', 'KAROL', '23434', 'DJFJD');
 /*!40000 ALTER TABLE `tecnico` ENABLE KEYS */;
 
 
@@ -189,14 +193,60 @@ CREATE TABLE IF NOT EXISTS `valoracion_producto` (
   CONSTRAINT `FK_valoracion_producto_tiposistemaoperativo` FOREIGN KEY (`id_sistema_operativo`) REFERENCES `tiposistemaoperativo` (`idsistema`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla serviciotecnico.valoracion_producto: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla serviciotecnico.valoracion_producto: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `valoracion_producto` DISABLE KEYS */;
 INSERT INTO `valoracion_producto` (`id_cliente_tecnico`, `fecha_ingreso`, `id_tipo_servicio`, `id_sistema_operativo`, `diagnostico_inicial`, `valor_total`, `productoid`, `Cliente_cc_cliente`, `tecnico_cc_tecnico`, `estado`, `fecha_revision`, `fecha_entrega`, `confirmacion_cliente`, `fecha_confirmacion_cliente`, `estado_producto`) VALUES
-	(1, '2016-09-18', 1, 2, 'erere', 0, 32, '1117513159', 123, 'entregado', NULL, NULL, 'si', NULL, 'A'),
-	(2, '2016-09-18', 1, 2, 'erere', 0, 32, '1117513159', 123, 'entregado', NULL, NULL, 'si', NULL, 'A'),
-	(3, '2016-09-19', 1, 3, 'VIRUS ', 0, 33, '1117513159', 123, 'entregado', NULL, NULL, 'si', NULL, 'A'),
-	(4, '2016-09-19', 1, 2, 'SFDDFD', 0, 32, '1117513159', 123, 'entregado', NULL, NULL, 'si', NULL, 'A');
+	(1, '2016-09-18', 1, 2, 'erere', 225000, 32, '1117513159', 123, 'revisado', '2016-09-19', NULL, 'no', NULL, 'A'),
+	(2, '2016-09-18', 1, 2, 'erere', 0, 32, '1117513159', 123, 'entregado', NULL, NULL, 'si', NULL, 'I'),
+	(3, '2016-09-19', 1, 3, 'VIRUS ', 0, 33, '1117513159', 123, 'entregado', NULL, NULL, 'si', NULL, 'I'),
+	(4, '2016-09-19', 1, 2, 'SFDDFD', 0, 32, '1117513159', 123, 'entregado', NULL, NULL, 'si', NULL, 'I');
 /*!40000 ALTER TABLE `valoracion_producto` ENABLE KEYS */;
+
+
+-- Volcando estructura para disparador serviciotecnico.disparador_insert_preciototal
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+DELIMITER //
+CREATE TRIGGER `disparador_insert_preciototal` AFTER INSERT ON `mantenimiento_piezas` FOR EACH ROW UPDATE
+    valoracion_producto
+		SET
+		    valor_total =
+		    (
+		        SELECT
+		            SUM(valor_servicio) AS preciototal
+		        FROM
+		            mantenimiento_piezas
+		        WHERE
+		            valoracion_producto_id_cliente_tecnico = new.valoracion_producto_id_cliente_tecnico
+		    ),
+		    fecha_revision = now(),
+		    estado='revisado'
+		WHERE
+		    id_cliente_tecnico = new.valoracion_producto_id_cliente_tecnico//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
+
+
+-- Volcando estructura para disparador serviciotecnico.mantenimiento_piezas_after_update
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+DELIMITER //
+CREATE TRIGGER `mantenimiento_piezas_after_update` AFTER UPDATE ON `mantenimiento_piezas` FOR EACH ROW UPDATE
+    valoracion_producto
+		SET
+		    valor_total =
+		    (
+		        SELECT
+		            SUM(valor_servicio) AS preciototal
+		        FROM
+		            mantenimiento_piezas
+		        WHERE
+		            valoracion_producto_id_cliente_tecnico = new.valoracion_producto_id_cliente_tecnico
+		    ),
+		    fecha_revision = now(),
+		    estado='revisado'
+		WHERE
+		    id_cliente_tecnico = new.valoracion_producto_id_cliente_tecnico//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

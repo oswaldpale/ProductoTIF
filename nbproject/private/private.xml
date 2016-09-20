@@ -3,30 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/web/DatosConsulta.jsp</file>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/web/PrincipalFuncionario.jsp</file>
-            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/web/index.jsp</file>
-=======
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/mostrarConsulta.jsp</file>
-            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerProducto.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/PrincipalFuncionario.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/index.jsp</file>
-            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/Producto.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerTecnico.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/ClienteproductoDAO.java</file>
-            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/MantenimientoPiezas.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/ConsultaEquipo.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/LoginTecnico.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletLoginTecnico.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/DatosConsulta.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/TecnicoDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/Marca.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/MantenimientoPiezaDao.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/Principal.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/MantenimientoPiezas.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/consulta.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerMantenimientoPiezas.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerMarca.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/DetalleServicio.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerProductoCliente.java</file>
->>>>>>> pamo
         </group>
     </open-files>
 </project-private>

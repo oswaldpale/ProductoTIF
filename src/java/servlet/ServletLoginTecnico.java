@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -48,6 +49,8 @@ public class ServletLoginTecnico extends HttpServlet {
             t.setPass(request.getParameter("contrasena"));
             
              if(_t.tecnico_Login(t)){
+                 
+                  request.getSession().setAttribute("tecnicoLogin", t);
                   response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp?Usuario="+t.getUsuario()
                   +"&contrasena="+t.getPass());
              }else{
