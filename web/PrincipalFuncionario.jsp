@@ -18,22 +18,40 @@
 
     <title>Principal Funcionario</title>
 
+   
     <!-- Bootstrap Core CSS -->
     <link href="CSS/PrincipalFuncionario/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- Custom CSS -->
+    <link href="CSS/PrincipalFuncionario/simple-sidebar.css" rel="stylesheet">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+		<script>
+			$(document).ready(function(){
+	    		$('#producto').click(function(){
+	       		$("#contenido").load("producto.jsp");
+	    									 });
+
+	    		$('#Django').click(function(){
+	       		$("#contenido").load("c_django.html");
+	    									 });
+
+	    		$('#Jython').click(function(){
+	       		$("#contenido").load("c_jython.html");
+	    									 });
+										});
+		</script>
 
 </head>
 
 <!-- Start Formoid form-->
 <link rel="stylesheet"  type="text/css" href="CSS/normalize.css" />        
 <link rel="stylesheet"  type="text/css" href="CSS/style.css" /> 
-<link rel="stylesheet" href="CSS/bootstrap.min.css">
+<link rel="stylesheet" href="CSS/PrincipalFuncionario/bootstrap.min.css">
 <link rel="stylesheet" href="CSS/bootstrap-theme.min.css">
 <link rel="stylesheet" href="CSS/ConsultaEquipo/formoid-biz-green.css" type="text/css" />
 <script type="text/javascript" src="JS/ConsultaEquipo/jquery.min.js"></script>
@@ -55,11 +73,12 @@
         </nav>
         <div class="container">
         <section>
-            <figure>
-                <center><img src="Images/consulta.jpg" height="200px"/></center>
-            </figure>
+            
 
-        </section>
+        </section></div>
+<header
+
+<body>
 
     <div id="wrapper">
 
@@ -67,12 +86,10 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        Utilidades Tecnico
-                    </a>
+                    <a href="accesorios.html">Accesorios</a>
                 </li>
                 <li>
-                    <a href="#">Registrar Producto</a>
+                    <a href="producto.jsp" id="producto">Registrar Producto</a>
                 </li>
                 <li>
                     <a href="#">Solicitar Mantenimiento</a>
@@ -97,10 +114,8 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
-                        
-
-                        
+                    <div id="contenido">                        
+                                              
                     </div>
                 </div>
             </div>
@@ -115,7 +130,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="JS/PrincipalFuncionario/bootstrap.min.js"></script>
-
+    <script src="JS/PrincipalFuncionario/bootstrap.js"></script>
     
     
 
