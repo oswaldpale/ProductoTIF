@@ -20,13 +20,12 @@ public class MantenimientoPiezaDao {
     public ConexionMysql _conexion = new ConexionMysql();
     
     public ArrayList ConsultarMantenimientoPendiente(Tecnico tec) {
-         
         String sql = "SELECT "
                         + "    vp.id_cliente_tecnico, "
                         + "    vp.fecha_ingreso, "
                         + "    ts.NombreServicio, "
                         + "    UPPER(CONCAT('(',c.cc_cliente,') ',c.nombre,' ',c.apellido)) AS nombreCliente, "
-                        + "UPPER(CONCAT('(',tq.nombreEquipo,')')) AS nombrequipo, "
+                        + "UPPER(CONCAT('(',tq.nombreEquipo,') ',m.nombremarca,' MODELO: ',p.modelo,' #SERIE: ',p.n_serie)) AS nombrequipo, "
                         + "    tso.nombreSistema, "
                         + "    vp.diagnostico_inicial, "
                         + "    vp.fecha_revision "

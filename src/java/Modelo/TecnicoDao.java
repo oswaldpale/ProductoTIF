@@ -57,4 +57,16 @@ public class TecnicoDao {
         }
         return false;
     }
+
+    public String recuperaIDTecnico(Tecnico t) {
+        String sql = "SELECT DISTINCT cc_tecnico FROM tecnico " 
+                      + " WHERE Usuario = '"+ t.getUsuario() +"' AND  contrasena = '"  + t.getPass() + "'";
+        
+        ArrayList dt = _conexion.GetData(sql);
+        for (Object object : dt) {            
+            HashMap item = (HashMap) object;
+            return item.get("cc_tecnico").toString();
+        }
+        return "";
+    }
 }

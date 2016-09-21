@@ -5,30 +5,26 @@
  */
 package servlet;
 
-import Controlador.ControllerProductoCliente;
-import Controlador.ControllerTecnico;
-import Entidades.Producto;
-import Entidades.Tecnico;
-import Entidades.Usuario;
+import Controlador.ControllerMantenimientoPiezas;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Entidades.Tecnico;
+import Entidades.Usuario;
 import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author PcIsa
+ * @author oswaldpale
  */
-public class ServletLoginTecnico extends HttpServlet {
-    
-    ControllerTecnico _t = new ControllerTecnico();
-    
+@WebServlet(name = "ServletMantenimientoPiezas", urlPatterns = {"/ServletMantenimientoPiezas"})
+public class ServletMantenimientoPiezas extends HttpServlet {
+
     /**
-     * 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -37,30 +33,38 @@ public class ServletLoginTecnico extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    ControllerMantenimientoPiezas mantenimiento = new ControllerMantenimientoPiezas();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        RequestDispatcher dispacher;
         try {
             /* TODO output your page here. You may use following sample code. */
-            Tecnico t = new Tecnico();
-            t.setUsuario(request.getParameter("Usuario"));
-            t.setPass(request.getParameter("contrasena"));
-            
-             if(_t.tecnico_Login(t)){
-                  t.setCodigo(_t.recupararIDTecnico(t));
-                  request.getSession().setAttribute("tecnicoLogin", t);
-                  response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
-             }else{
-                  response.sendRedirect("/ProductoTIF/index.jsp");
-             }
+            HttpSession session = request.getSession();
+            Tecnico tec = (Tecnico) session.getAttribute("tecnicoLogin");
+            String action = request.getAttribute("action").toString();
+            if (tec != null) { // Evalua El estado de la session
+                mantenimiento.ConsultarEquiposParaRevision(tec);
+                if ((!"".equals(action))){
+                     String htmlcode ="";
+                     if (action.equals("MostrarDetalle")){
+                         
+                     }else if(action.equals("InsertPieza")){
+                    
+                     }else if(action.equals("UpdateDetalle")){
+                     
+                     }
+                     
+                }
+            } else {
+                response.sendRedirect("/ProductoTIF/LoginTecnico.jsp"); // Si la session muere, redirecciono a l principal
+            }
+            out.println("<h1>Servlet ServletMantenimientoPiezas at " + request.getContextPath() + "</h1>");
         } finally {
             out.close();
         }
     }
-    
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -41,4 +41,8 @@ public class ControllerTecnico {
     public boolean tecnico_Login(Tecnico t){
         return _tecnico.TecnicoLogin(t);
     }
+
+    public String recupararIDTecnico(Tecnico t) {
+        return _tecnico.recuperaIDTecnico(t);
+    }
 }

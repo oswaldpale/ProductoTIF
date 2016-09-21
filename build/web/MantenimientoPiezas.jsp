@@ -22,27 +22,48 @@
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     </head>
     <body>
-        <% ControllerMantenimientoPiezas mp = new ControllerMantenimientoPiezas(); 
-           Tecnico tecnico =new Tecnico();
-           tecnico.setCodigo(request.getParameter("tecnico"));
-           
+        <% ControllerMantenimientoPiezas mp = new ControllerMantenimientoPiezas();
+               Tecnico tecnico = null;          
+             if(session.getAttribute("tecnicoLogin")!=null){ // Evalua El estado de la session
+                 tecnico = (Tecnico) session.getAttribute("tecnicoLogin");
+             }else{
+                 response.sendRedirect("/ProductoTIF/LoginTecnico.jsp"); // Si la session muere, redirecciono a l principal
+             }
         %>
-         <div class="container">
+
+        <script type="text/javascript" >
+            $(document).ready(function () {
+               
+                
+                $('#sequipo').on('change',function(){
+                    var valor = $(this).val();
+                    alert(valor);
+                });
+                
+            });
+        </script>
+        <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-3">
                     <div class="well well-sm">
                         <form class="form-horizontal" method="post" action="ServletSolicitudRevision">
                             <fieldset>
                                 <legend class="text-center header">Revisión del Equipo</legend>
-                               
+
                                 <div class="form-group">
                                     <label for="inputName" class="control-label col-xs-3">Equipo:</label>
-                                    <%=mp.ConsultarEquiposParaRevision(tecnico) %>
+                                    <%=mp.ConsultarEquiposParaRevision(tecnico)%>
+                                </div>
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"></span>
+                                    <div class="col-md-8">
+                                        <text class="form-control" id="nsistema" name="nsistema" readonly="true" ></textarea>
+                                    </div>
                                 </div>
                                 <fieldset>
                                     <div class="form-group">
                                         <label for="inputName" class="control-label col-xs-3">Piezas Cambiadas</label>
-                                       
+
                                     </div>
                                     <div class="form-group">
                                         <span class="col-md-1 col-md-offset-2 text-center"></span>

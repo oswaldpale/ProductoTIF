@@ -27,8 +27,15 @@
     <body>
         
          <% 
-           Tecnico tec = (Tecnico) session.getAttribute("tecnicoLogin");
-          String Usuario =  tec.getUsuario();
+             String Usuario="";
+             if(session.getAttribute("tecnicoLogin")!=null){ // Evalua El estado de la session
+                 Tecnico tec = (Tecnico) session.getAttribute("tecnicoLogin");
+                 Usuario =  tec.getUsuario();
+                 
+             }else{
+                 response.sendRedirect("/ProductoTIF/LoginTecnico.jsp"); // Si la session muere, redirecciono a l principal
+             }
+           
         %>
         
         <script type="text/javascript">
@@ -80,7 +87,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><%=tec.getUsuario()%></a>
+                <a class="navbar-brand" href="#"><%=Usuario%></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -111,7 +118,7 @@
                             <a href="#" id="solicitud" ><i class="fa fa-edit fa-fw"></i>Solicitud Revisión</a>
                         </li>
                          <li>
-                            <a href="#" id="revision" ><i class="fa fa-edit fa-fw"></i>Registro del Informe Tecnico.</a>
+                            <a href="#" id="revision" ><i class="fa fa-edit fa-fw"></i>Registro Tecnico Revisión</a>
                         </li>
                          <li>
                             <a href="#" id="cliente" ><i class="fa fa-edit fa-fw"></i>Registrar Cliente</a>

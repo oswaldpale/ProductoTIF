@@ -20,7 +20,7 @@ public class ControllerMantenimientoPiezas {
         MantenimientoPiezaDao man = new MantenimientoPiezaDao();
         ArrayList dt = man.ConsultarMantenimientoPendiente(tecnico);
          String htmlcode = "  <div class=\"col-xs-8\">\n"
-                      + "  <select class=\"form-control\" id=\"cliente\" name=\"ncliente\">";
+                      + "  <select class=\"form-control\" id=\"sequipo\" name=\"ncliente\">";
         htmlcode = htmlcode + "<option value='" + 0 + "'>" + "  " + "</option>";
         for (Object object : dt) {
             HashMap item = (HashMap) object;
