@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/mostrarConsulta.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/PrincipalFuncionario.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/Producto.jsp</file>
@@ -28,6 +29,9 @@
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/MantenimientoPiezas.jsp</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerMantenimientoPiezas.java</file>
             <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/DetalleServicio.java</file>
+=======
+            <file>file:/C:/Users/PcIsa/Desktop/ProductoTIF/web/EntregaEquipo.jsp</file>
+>>>>>>> 67da9825b3d5b50088e96cb99a6ad68719db735b
         </group>
     </open-files>
 </project-private>
