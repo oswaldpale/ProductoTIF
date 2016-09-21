@@ -51,8 +51,7 @@ public class ServletLoginTecnico extends HttpServlet {
              if(_t.tecnico_Login(t)){
                  
                   request.getSession().setAttribute("tecnicoLogin", t);
-                  response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp?Usuario="+t.getUsuario()
-                  +"&contrasena="+t.getPass());
+                  response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
              }else{
                   response.sendRedirect("/ProductoTIF/index.jsp");
              }

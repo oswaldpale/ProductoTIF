@@ -30,7 +30,7 @@
             </figure>
         </header>
         <nav id="menu2"> 
-            <ul class="nav nav-tabs">
+           <ul class="nav nav-tabs">
                 <li role="presentation" class="active"> <a href="index.jsp">Inicio</a></li>
                 <li role="presentation"> <a href="accesorios.html">Accesorios</a> </li>
                 <li role="presentation"> <a href="LoginTecnico.jsp">Soporte</a> </li>
