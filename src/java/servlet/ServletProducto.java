@@ -45,9 +45,10 @@ public class ServletProducto extends HttpServlet {
             p.setIdmarca(request.getParameter("nmarca"));
             
              if(_producto.insertarProducto(p)){
-               response.sendRedirect("/ProductoTIF/index.jsp");
+               response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
              }else{
                response.sendRedirect("/ProductoTIF/Producto.jsp");
+               
              }
         } finally {
             out.close();

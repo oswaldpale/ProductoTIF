@@ -49,7 +49,7 @@ public class ServletSolicitudRevision extends HttpServlet {
             items.setDiagnostico_inicial(request.getParameter("ndiagnostico"));
                       
             if(valoracion.insertarValoracionProducto(items)){
-                   response.sendRedirect("/ProductoTIF/index.jsp");
+                   response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
             }else{
                 
                 out.println("<!DOCTYPE html>");
