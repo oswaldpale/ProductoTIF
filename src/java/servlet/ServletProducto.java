@@ -47,7 +47,7 @@ public class ServletProducto extends HttpServlet {
              if(_producto.insertarProducto(p)){
                response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
              }else{
-               response.sendRedirect("/ProductoTIF/Producto.jsp");
+               response.sendRedirect("/ProductoTIF/PageError.jsp");
                
              }
         } finally {

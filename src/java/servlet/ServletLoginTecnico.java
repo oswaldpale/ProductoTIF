@@ -53,7 +53,7 @@ public class ServletLoginTecnico extends HttpServlet {
                   request.getSession().setAttribute("tecnicoLogin", t);
                   response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
              }else{
-                  response.sendRedirect("/ProductoTIF/index.jsp");
+                  response.sendRedirect("/ProductoTIF/LoginTecnico.jsp");
              }
         } finally {
             out.close();

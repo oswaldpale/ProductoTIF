@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/PrincipalFuncionario.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/Producto.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/RegistrarCliente.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/servicios.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletConsultarProducto.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletRegistrarClient.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/ClienteproductoDAO.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Conexion/ConexionMysql.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletLoginTecnico.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/PageError.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/TecnicoDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletMantenimientoPiezas.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/ProductoDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/MantenimientoPiezaDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Modelo/MarcaDao.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerProductoCliente.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerProducto.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerTecnico.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/SolicitudProducto.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/ConsultaEquipo.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/LoginTecnico.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/DatosConsulta.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletProducto.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Entidades/Tecnico.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/servlet/ServletSolicitudRevision.java</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/MantenimientoPiezas.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/web/EntregaEquipo.jsp</file>
+            <file>file:/C:/Users/oswaldpale/Documents/ProyectoJava/ProductoTIF/src/java/Controlador/ControllerMantenimientoPiezas.java</file>
+        </group>
+    </open-files>
 </project-private>

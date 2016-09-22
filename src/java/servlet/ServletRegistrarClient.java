@@ -54,7 +54,7 @@ public class ServletRegistrarClient extends HttpServlet {
 
                   response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
              }else{
-                  response.sendRedirect("/ProductoTIF/index.jsp");
+                  response.sendRedirect("/ProductoTIF/PageError.jsp");
 
              } 
         } finally {

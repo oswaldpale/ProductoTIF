@@ -51,16 +51,7 @@ public class ServletSolicitudRevision extends HttpServlet {
             if(valoracion.insertarValoracionProducto(items)){
                    response.sendRedirect("/ProductoTIF/PrincipalFuncionario.jsp");
             }else{
-                
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>El registro ya esta En reparación</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>Servlet ServletSolicitudRevision at " + request.getContextPath() + "</h1>");
-                out.println("</body>");
-                out.println("</html>");
+                   response.sendRedirect("/ProductoTIF/PageError.jsp");
             }
             
         } finally {

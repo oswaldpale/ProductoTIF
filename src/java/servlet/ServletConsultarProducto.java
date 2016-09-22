@@ -50,7 +50,7 @@ public class ServletConsultarProducto extends HttpServlet {
                   response.sendRedirect("/ProductoTIF/DatosConsulta.jsp?cc_cliente="+u.getCedula()
                   +"&n_serial="+p.getSerial());
              }else{
-                  response.sendRedirect("/ProductoTIF/index.jsp");
+                  response.sendRedirect("/ProductoTIF/ConsultaEquipo.jsp");
              }
         } finally {
             out.close();
