@@ -111,7 +111,10 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#" id="producto" ><i class="fa fa-dashboard fa-fw" ></i> Registrar Equipo</a>
+                            <a href="#" id="cliente" ><i class="fa fa-edit fa-fw"></i>Registrar Cliente</a>
+                        </li>
+                        <li>
+                            <a href="#" id="producto" ><i class="fa fa-dashboard fa-fw" ></i> Registrar Producto</a>
                         </li>
                        
                         <li>
@@ -120,9 +123,7 @@
                          <li>
                             <a href="#" id="revision" ><i class="fa fa-edit fa-fw"></i>Registro Tecnico Revisión</a>
                         </li>
-                         <li>
-                            <a href="#" id="cliente" ><i class="fa fa-edit fa-fw"></i>Registrar Cliente</a>
-                        </li>
+                         
 
                     </ul>
                 </div>

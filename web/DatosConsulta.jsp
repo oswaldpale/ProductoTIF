@@ -25,13 +25,13 @@
     <body class="blurBg-true" style="background-color:#ebeaea">
         <% ControllerProductoCliente pc = new ControllerProductoCliente();
             Usuario _usuario = new Usuario();
-            Producto _producto = new Producto();
+            String codservicio = request.getParameter("n_serial").toString();
             Cliente_producto_Valoracion infProducto = new Cliente_producto_Valoracion();
             Usuario _infCliente = new Usuario();
             _usuario.setCedula(request.getParameter("cc_cliente"));
-            _producto.setSerial(request.getParameter("n_serial"));
+            
             _infCliente = (Usuario) pc.Consulta_Usuario(_usuario);
-            infProducto = (Cliente_producto_Valoracion) pc.Consulta_Cliente_producto_valoracion(_producto);
+            infProducto = (Cliente_producto_Valoracion) pc.Consulta_Cliente_producto_valoracion(codservicio);
 
         %>
         <!-- Start Formoid form-->
@@ -89,7 +89,7 @@
                                     <legend class="text-left bg-primary">Información del Mantenimiento</legend>
                                 </fieldset>
                                 <div class="form-group">
-                                    <label for="inputName" class="control-label col-xs-2">No Servicio</label>
+                                    <label for="inputName" class="control-label col-xs-2">Telefono</label>
                                     <div class="col-xs-4">
                                         <input name="ncliente" type="text" class="form-control" readonly="true" value="<%=_infCliente.getTelefono()%>">
                                     </div>
@@ -125,7 +125,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%= pc.ConsultarDetalleServicio(_producto) %>
+                                                <%= pc.ConsultarDetalleServicio(codservicio) %>
                                             </tbody>
                                         </table
                                     </fieldset>

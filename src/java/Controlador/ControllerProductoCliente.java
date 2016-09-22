@@ -25,11 +25,11 @@ public class ControllerProductoCliente {
     public Usuario Consulta_Usuario(Usuario usu){
         return cpdDao.Consulta_Usuario(usu);
     }
-    public Cliente_producto_Valoracion Consulta_Cliente_producto_valoracion(Producto p){
-        return cpdDao.Consulta_Cliente_producto_valoracion(p);
+    public Cliente_producto_Valoracion Consulta_Cliente_producto_valoracion(String codservicio){
+        return cpdDao.Consulta_Cliente_producto_valoracion(codservicio);
     }
     
-    public String ConsultarDetalleServicio(Producto p){
+    public String ConsultarDetalleServicio(String p){
         
         ArrayList<DetalleServicio> det =  cpdDao.consultarDetalleServicio(p);
         String htmlcode="";

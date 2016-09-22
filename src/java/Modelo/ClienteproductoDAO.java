@@ -21,7 +21,7 @@ public class ClienteproductoDAO {
 
     public ConexionMysql _conexion = new ConexionMysql();
 
-    public Cliente_producto_Valoracion Consulta_Cliente_producto_valoracion(Producto p) {
+    public Cliente_producto_Valoracion Consulta_Cliente_producto_valoracion(String codservicio) {
 
         String sql = ""
                     + "select vp.id_cliente_tecnico as numServicio,ts.NombreServicio as TipoServicio, "
@@ -39,7 +39,7 @@ public class ClienteproductoDAO {
                     + "on vp.id_sistema_operativo = tp.idsistema "
                     + "inner join tiposervicio ts "
                     + "on vp.id_tipo_servicio = ts.idservicio "
-                    + "where p.n_serie = "+p.getSerial()+" AND vp.estado_producto='A';";
+                    + "where vp.id_cliente_tecnico=" + codservicio ;
 
         Cliente_producto_Valoracion pa = new Cliente_producto_Valoracion();
         ArrayList dt = _conexion.GetData(sql);
@@ -83,7 +83,7 @@ public class ClienteproductoDAO {
 
     }
     
-    public ArrayList<DetalleServicio> consultarDetalleServicio(Producto p){
+    public ArrayList<DetalleServicio> consultarDetalleServicio(String codservicio){
         String sql ="SELECT "
                     + "    mp.id_reporte_mantenimiento, "
                     + "    mp.pruebas_realizadas, "
@@ -102,7 +102,7 @@ public class ClienteproductoDAO {
                     + "ON "
                     + "    vp.productoid = p.idproducto "
                     + "WHERE "
-                    + "    p.n_serie = "+p.getSerial() + "";
+                    + "    p.n_serie = "+codservicio + "";
        
         ArrayList dt = _conexion.GetData(sql);
         
@@ -127,7 +127,7 @@ public class ClienteproductoDAO {
                 + "on vp.Cliente_cc_cliente = c.cc_cliente "
                 + "inner join producto p "
                 + "on p.idproducto = vp.productoid "
-                + "where c.cc_cliente = '"+u.getCedula()+"' and p.n_serie = '"+p.getSerial()+"' and vp.estado_producto='A';";
+                + "where c.cc_cliente = '"+u.getCedula()+"' AND vp.id_cliente_tecnico= " + p.getSerial();
         
         ArrayList dt = _conexion.GetData(sql);
         for (Object object : dt) {            

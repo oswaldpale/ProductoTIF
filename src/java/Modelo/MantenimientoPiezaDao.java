@@ -42,12 +42,10 @@ public class MantenimientoPiezaDao {
                         + "INNER JOIN tipoequipo tq "
                         + "ON p.id_tipo_equipo = tq.idtipoequipo "
                         + "WHERE "
-                        + "    id_cliente_tecnico='1' "
-                        + "AND estado= 'revisado' "
+                        + "estado= 'revisado' "
                         + " OR estado='pendiente' "
                         + "AND estado_producto='A' ";
-
-        MantenimientoPiezas pa = new MantenimientoPiezas();
+  
         ArrayList dt = _conexion.GetData(sql);
        
         return dt; 

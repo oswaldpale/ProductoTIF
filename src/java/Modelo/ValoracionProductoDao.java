@@ -7,6 +7,8 @@ package Modelo;
 
 import Conexion.ConexionMysql;
 import Entidades.ValoracionProducto;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -42,9 +44,20 @@ public class ValoracionProductoDao {
                             + "        " + v.getProductoid() + ", "
                             + "       '" +v.getCliente_cc_cliente() +"', "
                             + "        " + v.getTecnico_cc_tecnico()+ ", "
-                            + "        'entregado', "
+                            + "        'pendiente', "
                             + "        'A' "
                             + "    )";
             return _connection.SetData(sql);
         }
+
+    public String consultarServicio() {
+       String sql = "SELECT MAX(vp.id_cliente_tecnico) AS codigo FROM valoracion_producto vp";
+       ArrayList dt =  _connection.GetData(sql);
+        for (Object object : dt) {
+            HashMap item =(HashMap) object;
+            String codigo = item.get("codigo").toString();
+            return codigo;
+        }
+        return "";
+    }
 }

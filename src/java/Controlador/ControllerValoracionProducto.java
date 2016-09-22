@@ -18,4 +18,8 @@ public class ControllerValoracionProducto {
      public boolean insertarValoracionProducto(ValoracionProducto v){
         return valoracion.insertarValoracionProducto(v);
     }
+
+    public String consultarServicio() {
+        return valoracion.consultarServicio();
+    }
 }
